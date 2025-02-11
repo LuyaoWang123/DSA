@@ -27,32 +27,19 @@
 |  | Selection sort | unstable O(n^2 / 2), choose min element from [j, n), replace it with i |  |
 |  | Insertion sort | stable O(n^2 / 4), for (int j = i; j > 0 && nums[j] < nums[j - 1]; j--) swap(j, j-1) |  |
 |  | Bubble sort | stable |  |
-|  | Quick Sort | (unstable: 3a,3b,2, nlogn, worst case n^2) 
-1. Intro-7.1(classy, tle as when they have repeated elements at the back of the array, they need to be consistently swaped(but for while they skip if equal, reducing O(3n)->O(n)).  
-2. for two while, we wanna always goes into while and check pivot including as we wanna get the correct left and right pointer to the correct place after comparing every element |  |
-|  | Merge Sort | (stable, nlogn, worst case nlogn) 
-divide and conquer |  |
-|  | Heap sort |  (unstable, nlgn)
-1. heapify(i, recursively exchange with children who is larger than i)
-2. do recursively heapify from last second level(inx is n/2 - 1)
-3. move the heap's top element to the last element |  |
-|  | Counting sort | (stable, n+k, worst case n^2)
-1. keep frequency of all elements;
-2. add up all frequency from least element to the highest element to get the index + 1 of each element in result array;
-3. shift -1 to get the index in the result array |  |
-|  | Cyclic sort | 287. Find the Duplicate Number / 268.
-needs to be mapped from 1 to n, or from 0 to n |  |
+|  | Quick Sort | (unstable: 3a,3b,2, nlogn, worst case n^2) <br>1. Intro-7.1(classy, tle as when they have repeated elements at the back of the array, they need to be consistently swaped(but for while they skip if equal, reducing O(3n)->O(n)).  <br>2. for two while, we wanna always goes into while and check pivot including as we wanna get the correct left and right pointer to the correct place after comparing every element |  |
+|  | Merge Sort | (stable, nlogn, worst case nlogn) <br>divide and conquer |  |
+|  | Heap sort |  (unstable, nlgn)<br>1. heapify(i, recursively exchange with children who is larger than i)<br>2. do recursively heapify from last second level(inx is n/2 - 1)<br>3. move the heap's top element to the last element |  |
+|  | Counting sort | (stable, n+k, worst case n^2)<br>1. keep frequency of all elements;<br>2. add up all frequency from least element to the highest element to get the index + 1 of each element in result array;<br>3. shift -1 to get the index in the result array |  |
+|  | Cyclic sort | 287. Find the Duplicate Number / 268.<br>needs to be mapped from 1 to n, or from 0 to n |  |
 |  | 3397. Maximum Number of Distinct Elements After Operations |  |  |
 |  | 2439. Minimize Maximum of Array | prefix, always atmorized with previous subarray |  |
 |  |  |  |  |
 |  |  |  |  |
 |  |  |  |  |
 | LinkedList | Problem | Thoughts | Understanding |
-|  | 61. Rotate List | 1.To close the linked list into the ring
-2.To break the ring after the new tail and just in front of the new head. |  |
-|  | 143. Reorder List | 1. find mid point in linkedlist
-2. reverse linkedlist;
-3. merge 2 linkedlist in place |  |
+|  | 61. Rotate List | 1.To close the linked list into the ring<br>2.To break the ring after the new tail and just in front of the new head. |  |
+|  | 143. Reorder List | 1. find mid point in linkedlist<br>2. reverse linkedlist;<br>3. merge 2 linkedlist in place |  |
 |  | 142. Linked List Cycle II | cycle in linkedlsit |  |
 |  | 287. Find the Duplicate Number | cycle in array |  |
 |  |  |  |  |
@@ -65,8 +52,7 @@ needs to be mapped from 1 to n, or from 0 to n |  |
 |  | 138. Copy List with Random Pointer | intervaving / store copied node in hashmap | record unique node |
 |  | 133. Clone Graph | store copied node in hashmap |  |
 |  | 460. LFU Cache |  |  |
-|  | 41. First Missing Positive | use index as the hash key. 
-negative means present. 1-n-1 sotres. 0 store n |  |
+|  | 41. First Missing Positive | use index as the hash key. <br>negative means present. 1-n-1 sotres. 0 store n |  |
 |  |  |  |  |
 |  |  |  |  |
 |  |  |  |  |
@@ -78,17 +64,9 @@ negative means present. 1-n-1 sotres. 0 store n |  |
 |  | 3381. Maximum Subarray Sum With Length Divisible by K | no constrains on out/in (compre cur, then update pre) | max differences(size k) between any 2 groups |
 |  | 84. Largest Rectangle in Histogram | record the min(left boundary), calculate the length*min |  |
 |  | 680. Valid Palindrome II | using 2 pointer twice would be fine, once found unproper, return 2 pointer's result |  |
-|  | 2422. Merge Operations to Turn Array Into a Palindrome | 1. using leftSum, and rightSum to keep twoSides;
-2. if equal, FIRST update pointer, then update val;
-3. <, FIRST update left, then update val;
-4. >, FIRST uodate right ptr, then update val;
-core: sum is [], so to calculate the next sum, need to first update pointer then update val |  |
-|  | 1813. Sentence Similarity III | 1. either 1 chunk on left or right; or 2 chunk both on the left or right;
-2. can use 2 deque to keep left and right;
-2. can also use 2 pointer to check if shorter words are located at the two ends | two pointer to locate if data locate on two end |
-|  | 75. Sort Colors | 3 pointer, p0 in the left, p2 in the right. and a current pointer used to iterate through the array; 
-being stuck: know p0 and p2, but did not came up with special curr ptr;
-NOTE: ptr/counter can be sperate with other ptrs |  |
+|  | 2422. Merge Operations to Turn Array Into a Palindrome | 1. using leftSum, and rightSum to keep twoSides;<br>2. if equal, FIRST update pointer, then update val;<br>3. <, FIRST update left, then update val;<br>4. >, FIRST uodate right ptr, then update val;<br>core: sum is [], so to calculate the next sum, need to first update pointer then update val |  |
+|  | 1813. Sentence Similarity III | 1. either 1 chunk on left or right; or 2 chunk both on the left or right;<br>2. can use 2 deque to keep left and right;<br>2. can also use 2 pointer to check if shorter words are located at the two ends | two pointer to locate if data locate on two end |
+|  | 75. Sort Colors | 3 pointer, p0 in the left, p2 in the right. and a current pointer used to iterate through the array; <br>being stuck: know p0 and p2, but did not came up with special curr ptr;<br>NOTE: ptr/counter can be sperate with other ptrs |  |
 |  | 1237. Find Positive Integer Solution for a Given Equation |  |  |
 |  |  |  |  |
 |  |  |  |  |
@@ -117,9 +95,7 @@ NOTE: ptr/counter can be sperate with other ptrs |  |
 |  | 227. Basic Calculator II | use a '+' as inital operations. then once a number finished, calculate this number based on last operation |  |
 |  | 735. Asteroid Collision |  |  |
 |  | 394. Decode String | corner case: k[string], when k does not show up, k should be default to 1 |  |
-|  | 856. Score of Parentheses | 1.()
-2.AB = A+B
-3. (A) = 2* A |  |
+|  | 856. Score of Parentheses | 1.()<br>2.AB = A+B<br>3. (A) = 2* A |  |
 |  | 962. Maximum Width Ramp | track the strict decreasing seq, then the ptr on the right would always compare with the smaller and closer one |  |
 |  | 32. Longest Valid Parentheses |  |  |
 |  |  |  |  |
@@ -130,10 +106,8 @@ NOTE: ptr/counter can be sperate with other ptrs |  |
 |  | 875. Koko Eating Bananas |  |  |
 |  | 69. Sqrt(x) |  |  |
 |  | 528. Random Pick with Weight | prefix sum + need to find the first element that 's  >= than the target;  |  |
-|  | 162. Find Peak Element | binary search sometimes [) -> might be better for squeeze the range(squeeze l and r, while(l < r)), sometimes [](might be better to find target. 
-eg. once found nums[m] > nums[m+1], means we can squeeze to m |  |
-|  | 658. Find K Closest Elements | Fuzzy binary search, find the first element that's larget than that(or smaller than that);
-then compare it with the element right next to it, then we can get the smallest |  |
+|  | 162. Find Peak Element | binary search sometimes [) -> might be better for squeeze the range(squeeze l and r, while(l < r)), sometimes [](might be better to find target. <br>eg. once found nums[m] > nums[m+1], means we can squeeze to m |  |
+|  | 658. Find K Closest Elements | Fuzzy binary search, find the first element that's larget than that(or smaller than that);<br>then compare it with the element right next to it, then we can get the smallest |  |
 |  | 1231. Divide Chocolate | if we wanna make l moving to the right, it is not a good idea to l = m as this may cause tle, it is always moving r = m |  |
 |  |  |  |  |
 |  |  |  |  |
@@ -155,75 +129,42 @@ then compare it with the element right next to it, then we can get the smallest 
 |  | 416. Partition Equal Subset Sum | recursion + memoization(instead of passing remaining to children, pass to n-1) |  |
 |  | 79. Word Search | each letter has 3 directions to go. O(N*3^L) |  |
 |  | 39. Combination Sum |  |  |
-|  | 40. Combination Sum II | how to avoid repetition in combination?
-1. sort
-2. nums[i] == nums[i=1] continue(skip) |  |
-|  | 140. Word Break II | each word is either chosen or not. O(N*2^M)
-for (String word : wordDict) {
-            if (curS.startsWith(word)) { 
-                ....
-      }
-} |  |
-|  | 473. Matchsticks to Square | must sort to do the optimization;
-use backtracking to track the sides of each possible square. (each stick can be placed to each side)->means 
-each sticks[i] has 4 choices.
-difference between 39, pre vals in 39 can be reused, but here each val can be used only once. 
-so for single elements(idx = i), the combo it can choose is in side 0, 1, 2 or 3; instead of the rest n - i elements |  |
+|  | 40. Combination Sum II | how to avoid repetition in combination?<br>1. sort<br>2. nums[i] == nums[i=1] continue(skip) |  |
+|  | 140. Word Break II | each word is either chosen or not. O(N*2^M)<br>for (String word : wordDict) {<br>            if (curS.startsWith(word)) { <br>                ....<br>      }<br>} |  |
+|  | 473. Matchsticks to Square | must sort to do the optimization;<br>use backtracking to track the sides of each possible square. (each stick can be placed to each side)->means <br>each sticks[i] has 4 choices.<br>difference between 39, pre vals in 39 can be reused, but here each val can be used only once. <br>so for single elements(idx = i), the combo it can choose is in side 0, 1, 2 or 3; instead of the rest n - i elements |  |
 |  | 62. Unique Paths | backtrack + memo |  |
 |  | 63. Unique Paths II | backtrack + memo only 2 directions, using memo as the path is not up to other condition  |  |
-|  | 980. Unique Paths III | backtrack + remove memo, as the current path not only depends on the down and right
-but also depends on if others cells visited or not. you can:
-1. check all grid to see if has visited all cells;
-2. use a variables to track non-obscle |  |
+|  | 980. Unique Paths III | backtrack + remove memo, as the current path not only depends on the down and right<br>but also depends on if others cells visited or not. you can:<br>1. check all grid to see if has visited all cells;<br>2. use a variables to track non-obscle |  |
 |  | 89. Gray Code | 1. Did a mask + iterate through the list reversely |  |
-|  | 490. The Maze | 1. Set visited before entering the directions as if we try some directions and fianlly go back to this visited position, that's a fail
-2. Use a while to keep going until the new cell is not legal |  |
+|  | 490. The Maze | 1. Set visited before entering the directions as if we try some directions and fianlly go back to this visited position, that's a fail<br>2. Use a while to keep going until the new cell is not legal |  |
 |  |  |  |  |
 |  |  |  |  |
 |  |  |  |  |
 | DP | Problem | Thoughts | Understand |
 |  | 70. Climbing Stairs | dp[i] = dp[i-1] + dp[i-2], no collision |  |
 |  | 213. House Robber II | just 2 subproblem, from [1, n-1] or [0, n-2] |  |
-|  | 337. House Robber III | on the tree, 3 situations + memo as left and right might be reused:
-1. cur + children's children;
-2. max(left + right's children, right + left's children)
-3. left + right |  |
-|  | 5. Longest Palindromic Substring | 1. inialize len1;
-2. initalize len2;
-3. s.charAt(j) == s.charAt(i) && palind[i + 1][j - 1]) |  |
-|  | 650. 2 Keys Keyboard | recursion relation is around the current #operations
-either 1 operation(paste pre) or  2 operations(copy cur + paste cur);
-then use memo to remember the res |  |
-|  | 1259. Handshakes That Don't Cross | divide a circle into 2 parts, if having 2i people
-1. choose 2 people handshake;
-2. all left 2j can't shake with right (2i - 2 - 2j) -> simplify to dp[j] * dp[i - j - 1] |  |
+|  | 337. House Robber III | on the tree, 3 situations + memo as left and right might be reused:<br>1. cur + children's children;<br>2. max(left + right's children, right + left's children)<br>3. left + right |  |
+|  | 5. Longest Palindromic Substring | 1. inialize len1;<br>2. initalize len2;<br>3. s.charAt(j) == s.charAt(i) && palind[i + 1][j - 1]) |  |
+|  | 650. 2 Keys Keyboard | recursion relation is around the current #operations<br>either 1 operation(paste pre) or  2 operations(copy cur + paste cur);<br>then use memo to remember the res |  |
+|  | 1259. Handshakes That Don't Cross | divide a circle into 2 parts, if having 2i people<br>1. choose 2 people handshake;<br>2. all left 2j can't shake with right (2i - 2 - 2j) -> simplify to dp[j] * dp[i - j - 1] |  |
 |  | 10. Regular Expression Matching | if you wanna if(!A && B || A && !B) which is ^, we can return if (A) return B? |  |
-|  | 3418. Maximum Amount of Money Robot Can Earn | Besides recording x and y, also recording how many operations does it use(the thrid dimentions)
-recurrence relation:
-1. dp[i][j][k]=max(dp[i-1][j][k] + coins[i][j], dp[i][j-1][k] + coins[i][j], dp[i-1][j][k+1], dp[i][j-1][k+1]
-for this status(represented by i,j) if we are using it, then we have 2 value to compare; if we are not using it, still 2 value |  |
+|  | 3418. Maximum Amount of Money Robot Can Earn | Besides recording x and y, also recording how many operations does it use(the thrid dimentions)<br>recurrence relation:<br>1. dp[i][j][k]=max(dp[i-1][j][k] + coins[i][j], dp[i][j-1][k] + coins[i][j], dp[i-1][j][k+1], dp[i][j-1][k+1]<br>for this status(represented by i,j) if we are using it, then we have 2 value to compare; if we are not using it, still 2 value |  |
 |  | 494. Target Sum | for the current index, keep track of the remain sum. |  |
 |  |  |  |  |
 |  |  |  |  |
 |  |  |  |  |
 | Bfs | Problem | Thoughts | Understand |
-|  | 200. Number of island | regular bfs
-1. update seen in-place
-2. update seen using seen[][]
-3. update seen using hashset |  |
-|  | 694. Number of Distinct Islands | regular bfs + hash pattern. as the way to iterate different is the same(i and j are fixed)
-(x - originX, y - originY) as the pattern region | HashSet first call hashcode of the element, then call equals |
+|  | 200. Number of island | regular bfs<br>1. update seen in-place<br>2. update seen using seen[][]<br>3. update seen using hashset |  |
+|  | 694. Number of Distinct Islands | regular bfs + hash pattern. as the way to iterate different is the same(i and j are fixed)<br>(x - originX, y - originY) as the pattern region | HashSet first call hashcode of the element, then call equals |
 |  | 695. Max Area of Island | if you can't modify the gragh, use seen, or visited[] |  |
 |  | 1245. Tree Diameter | use bfs to find the furthest node, then use the furthest node to find another further node, which will be the answer |  |
-|  | 752. Open the Lock | using bfs + level tranversal to each char in the string
-(each char has 2 choices, either -1 or +1 |  |
+|  | 752. Open the Lock | using bfs + level tranversal to each char in the string<br>(each char has 2 choices, either -1 or +1 |  |
 |  | 785. Is Graph Bipartite? | 2 coloring problem, using bfs or dfs |  |
 |  | 934. Shortest Bridge | take a chunk as the center, then expand it level by level(graph level tranversal) | find the shortest distance for 2 patterns |
 |  | Rotten Orange | take different points as center, then expand it level by level(graph level tranversal |  |
 |  | 127. Word Ladder |  |  |
 |  | 815. Bus Routes |  |  |
-|  | 909. Snakes and Ladders | 1.peel onion, while the lader/snake is the same level as board[x][y] = -1;
-2. strech out the x and y to 1 d array by restore boardToList[cellIdx][r or c] |  |
+|  | 909. Snakes and Ladders | 1.peel onion, while the lader/snake is the same level as board[x][y] = -1;<br>2. strech out the x and y to 1 d array by restore boardToList[cellIdx][r or c] |  |
 |  |  |  |  |
 |  |  |  |  |
 |  |  |  |  |
@@ -232,28 +173,15 @@ for this status(represented by i,j) if we are using it, then we have 2 value to 
 |  | 802. Find Eventual Safe States |  |  |
 |  |  |  |  |
 | Topological Sort | Problem | Thoughts | Understand |
-|  | 269. Alien Dictionary | Topological sort.
-Build the relationship according to the words
-Then use indegree and bfs to solve it |  |
+|  | 269. Alien Dictionary | Topological sort.<br>Build the relationship according to the words<br>Then use indegree and bfs to solve it |  |
 |  |  |  |  |
 |  |  |  |  |
 |  |  |  |  |
 | Math | Problem | Thoughts | Understand |
-|  | 1071. Greatest Common Divisor of Strings | gcd:
-private int gcd(int a, int b) {
-        if (a == 0) return b;
-        return gcd(b % a, a);
-} | similar thoughts as intersection of 2 linkedlist |
+|  | 1071. Greatest Common Divisor of Strings | gcd:<br>private int gcd(int a, int b) {<br>        if (a == 0) return b;<br>        return gcd(b % a, a);<br>} | similar thoughts as intersection of 2 linkedlist |
 |  | 365. Water and Jug Problem | (ax + by ) % gcd (x, y) == 0? where target = ax + by if it is legal |  |
-|  | 204. Count Primes | for (int i = 2; i <= (int) Math.sqrt(n); i++) {
-            if (prime[i]) {
-                for (int c = i * i; c < n; c += i) {
-                    prime[c] = false;
-                }
-            }
-        } |  |
-|  | 1183. Maximum Number of Ones | for each square(3*3 example), the number of ones would be 
-[1 + (height - (r + 1)) / sideLength] * [1 + (width - (c + 1)) / sideLength] |  |
+|  | 204. Count Primes | for (int i = 2; i <= (int) Math.sqrt(n); i++) {<br>            if (prime[i]) {<br>                for (int c = i * i; c < n; c += i) {<br>                    prime[c] = false;<br>                }<br>            }<br>        } |  |
+|  | 1183. Maximum Number of Ones | for each square(3*3 example), the number of ones would be <br>[1 + (height - (r + 1)) / sideLength] * [1 + (width - (c + 1)) / sideLength] |  |
 |  |  |  |  |
 |  |  |  |  |
 | Trie | Problem | Thoughts | Understand |
@@ -263,21 +191,16 @@ private int gcd(int a, int b) {
 |  |  |  |  |
 | Treee | Problem | Thoughts | Understand |
 |  | 1530. Number of Good Leaf Nodes Pairs | post order traversal; first left, then right, then deal with the node itself |  |
-|  | 96. Unique Binary Search Trees I | 1. divide into different category; (0(left),2(right)), (1(left), 1(right)), (2(left), 0(right))
-2. math formula |  |
-|  | 95. Unique Binary Search Trees II | 1. using divide and conquer;
-2. for a number i, left sub tree is from [s, i - 1], right sub tree is from [i + 1, e] |  |
-|  | 255. Verify Preorder Sequence in Binary Search Tree | use stack to simulate preorder trverse, then for a num, compare all num smaller than it, pop it and track
-the min level. as we pop, the last being poped would be the largest, while num is supposed to > largest on the stack |  |
+|  | 96. Unique Binary Search Trees I | 1. divide into different category; (0(left),2(right)), (1(left), 1(right)), (2(left), 0(right))<br>2. math formula |  |
+|  | 95. Unique Binary Search Trees II | 1. using divide and conquer;<br>2. for a number i, left sub tree is from [s, i - 1], right sub tree is from [i + 1, e] |  |
+|  | 255. Verify Preorder Sequence in Binary Search Tree | use stack to simulate preorder trverse, then for a num, compare all num smaller than it, pop it and track<br>the min level. as we pop, the last being poped would be the largest, while num is supposed to > largest on the stack |  |
 |  |  |  |  |
 | MST | Problem | Thoughts | Understand |
 |  | 1584. Min Cost to Connect All Points | prim/kruskal |  |
 |  |  |  |  |
 |  |  |  |  |
 | Union Find | Problem | Thoughts | Understand |
-|  | 305. Number of Islands II | Union Find
-1. making 2d into 1d as parent. 
-2. everytime, we are inserting a node, see if this node can be union to existed land |  |
+|  | 305. Number of Islands II | Union Find<br>1. making 2d into 1d as parent. <br>2. everytime, we are inserting a node, see if this node can be union to existed land |  |
 |  |  |  |  |
 |  |  |  |  |
 |  |  |  |  |
