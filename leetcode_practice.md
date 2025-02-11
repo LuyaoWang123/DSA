@@ -28,9 +28,7 @@
 |  | Insertion sort | stable O(n^2 / 4), for (int j = i; j > 0 && nums[j] < nums[j - 1]; j--) swap(j, j-1) |  |
 |  | Bubble sort | stable |  |
 |  | Quick Sort | (unstable: 3a,3b,2, nlogn, worst case n^2) 
-
 1. Intro-7.1(classy, tle as when they have repeated elements at the back of the array, they need to be consistently swaped(but for while they skip if equal, reducing O(3n)->O(n)).  
-
 2. for two while, we wanna always goes into while and check pivot including as we wanna get the correct left and right pointer to the correct place after comparing every element |  |
 |  | Merge Sort | (stable, nlogn, worst case nlogn) 
 divide and conquer |  |
