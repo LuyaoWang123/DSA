@@ -68,6 +68,7 @@
 |  | 1813. Sentence Similarity III | 1. either 1 chunk on left or right; or 2 chunk both on the left or right;<br>2. can use 2 deque to keep left and right;<br>2. can also use 2 pointer to check if shorter words are located at the two ends | two pointer to locate if data locate on two end |
 |  | 75. Sort Colors | 3 pointer, p0 in the left, p2 in the right. and a current pointer used to iterate through the array; <br>being stuck: know p0 and p2, but did not came up with special curr ptr;<br>NOTE: ptr/counter can be sperate with other ptrs |  |
 |  | 1237. Find Positive Integer Solution for a Given Equation |  |  |
+|  | 3284. Sum of Consecutive Subarrays | for each i, think about it as the end of a consecutive subarray, add the ctn * nums[i] as the cur sum, then accumuate the cur sum to res;<br>special case: when appear /\ or \/, the peek itself will be recalculated again; <br>        // 1 [1] <br>        // 1 + 2 * 2. [1,2], [2]<br>        // 1 + 2 * 2 + 3 * 3 [1,2,3], [2,3], [3]<br>being stuck: not sure how  pre element like 1 is carried from sum to res, thought it is omitted, but it is carried by accumate opperation |  |
 |  |  |  |  |
 |  |  |  |  |
 | Sliding Window | Problem | Thoughts | Understand |
