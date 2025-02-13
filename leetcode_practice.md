@@ -86,6 +86,8 @@
 |  | 395. Longest Substring with At Least K Repeating Characters | using the uniqueness as constrains. uniqueness iterate from 1 to maxUniqueness |  |
 |  | 1151. Minimum Swaps to Group All 1's Together | sliding window constrains: the number of all 1s. as long as the length of window exceed total ones |  |
 |  |  |  |  |
+| Monotoic queue | Problem | Thoughts | Understand |
+|  | 1696. Jump Game VI | intuition: dp, O(n^2)->fail<br>improve: dp + monotoic queue(only store index of those strictly increasing elements that can jump to i)<br>"can" means those indices >= i - k<br>always poll first element as candidate jumpping to i(as the first element is guaranteed to be ABLE to jump to from previous step) |  |
 |  |  |  |  |
 | Stack | Problem | Thoughts | Understand |
 |  | minstack | min val will not be removed in advance, this guarantees that if the min val is removed, all potential min is removed as well; but if we are allowed to remove this min before potential elements removed, then we also need to record the potential removed elements |  |
