@@ -215,6 +215,7 @@
 |  |  |  |  |
 | Miscellaneous | Problem | Thoughts | Understand |
 |  | 1980. Find Unique Binary String | Cantor's Diagonal Argument-ans will differ from every string in at least one position |  |
+|  | 277. Find the Celebrity | O(n^2): n^2 check the famousness for each people(if only 1 person being known for every one and this person knows no one)<br>O(n): everyone knows celebrity(so first find a candidate), then this candidate needs to knows no body and every body knows this candidate | find if exactly one node has indegreen n, outdegree 0 |
 |  |  |  |  |
 | TreeSet | Problem | Thoughts | Understand |
 | treeSet use NavigatableSet and red-black tree internally, contains, remove all require LogN, but pq might require O(N) for contain and remoce. pq only cares about the optimal while others order not matters. but treeset maintain a golobally sorted sequence |  |  |  |
