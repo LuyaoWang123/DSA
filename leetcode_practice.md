@@ -103,6 +103,7 @@
 |  | 856. Score of Parentheses | 1.()<br>2.AB = A+B<br>3. (A) = 2* A |  |
 |  | 962. Maximum Width Ramp | track the strict decreasing seq, then the ptr on the right would always compare with the smaller and closer one |  |
 |  | 32. Longest Valid Parentheses |  |  |
+|  | 2375. Construct Smallest Number From DI String | stack can deal with the monotonic problem(like incre or decre), if incre, just pop the element you just pushed; ow store it in the stack |  |
 |  |  |  |  |
 |  |  |  |  |
 | Binary Search | Problem | Thoughts | Understand |
