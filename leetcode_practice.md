@@ -36,6 +36,7 @@
 |  | 2439. Minimize Maximum of Array | prefix, always atmorized with previous subarray |  |
 |  | 1727. Largest Submatrix With Rearrangements | prefix, given a current row, calculate size of continuous col end to this row with value 1s, then sort this curRow, so that are continuous chunk will go to the right |  |
 |  | 1352. Product of the Last K Numbers | prefix. given stream output the product of last k element. use prefix array when add element, be careful: when the element is 0.<br>intuition: add a treeset(storing 0's index) to get the higher/lower element index, judge if this entry within the last k's interval;<br>improve: if element is 0, clear the prefix array, when ask k element just check if the prefix size < k |  |
+|  | 1526. Minimum Number of Increments on Subarrays to Form a Target Array | use the differences between two number to judge if they belong to the same group(means decrement together) |  |
 |  |  |  |  |
 |  |  |  |  |
 |  |  |  |  |
