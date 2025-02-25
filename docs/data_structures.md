@@ -53,3 +53,53 @@ $n$ is the length of the string input
 Time Complexity: $O(n)$, as we iterate through the whole string, each character in the string is accessed once
 
 Space Complexity: $O(n)$, as we are using stack, whose size might go up to the whole string
+
+
+For problem 20, it is just judging the if all open and closed parentheses get matched. Then based on
+the fact that they are matched, we can also compute the properties of such matched(balanced) string input. 
+For example, problem 856:
+
+#### [Leetcode 856(Medium). Score of Parentheses](https://leetcode.com/problems/score-of-parentheses/description/)
+##### Description:
+Given a **balanced** parentheses string s, return the score of the string.
+
+The score of a balanced parentheses string is based on the following rule:
+
++ "()" has score 1.
++ AB has score A + B, where A and B are balanced parentheses strings.
++ (A) has score 2 * A, where A is a balanced parentheses string.
+
+##### Solution: 
+Before calculating the score of the input, we initialize the stack via pushing 0(current value of the input)
+Then for each character in the string, it is either '(' or ')':
++ If the character is '(', then it is a new nested layer, for example, a string with "(())" has layer depth 2,
+while a string "((()()))" has a depth 3, as there are at most 3 unmatched ((( appear together, 
+either (((, or ((()(. Each time for  a new layer, we push 0 to the stack indicates that 
+this is a new layer;
++ If the character is ')', then it ends a nested layer. As we end the layer, 
+we will need to double the score of the nested string by rule 3. When we finish nesting calculation,
+we also need to add this string's score to the left adjacent nested string in the same depth, which is rule 2. 
+For example, (ABC), where A,B,C are all balanced parentheses string, and A,B,C has the same depth. 
+  + Thus when we find the score of A, we will add score A to score (, which is 0, get a score $score_{(A}$;
+  + then when we find the score of B, we will add score B to $score_{(A}$, get $score_{(AB}$, 
+  + then when we find the score of C, we will add score C to $score_{(AB}$, get $score_{(ABC}$
+  + then we have ), that means we need to double the score of $ABC$, then push it to stack 
+
+In short, by pop 2 values from stack and push 1 value in stack when we encounter ')', 
+we actually finish the match this ')' to the most recent open parentheses, and by adding the result to
+the second recent open parentheses, we make this second parentheses to be the most recent unmatched 
+open parentheses **and** compute the nest string score. 
+
+Here is an animation(too small? [original slides](/src/main/resources/856_score_of_parentheses.pptx))
+<figure style="text-align: center;">
+  <img src="../src/main/resources/856_score_of_parentheses.gif" alt="Description">
+  <figcaption>
+    <strong>Figure 2.</strong> Score of parentheses example animation<br>
+  </figcaption>
+</figure>
+
+##### [Code]()
+
+##### Complexity:
+Time Complexity is $O(n)$ where n is the length of parentheses input;
+Space Complexity is $O(n)$ 
