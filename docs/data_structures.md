@@ -112,20 +112,35 @@ and based on valid parentheses, compute the value of nested layers of parenthese
 ##### Description
 Given a string containing just the characters '(' and ')', return the length of the longest valid (well-formed) parentheses substring.
 
-##### Solution
-For this problem, we want to know the longest length of the valid parentheses, which means that we need to store each new layer's start index in the stack, then whenever we met a closed parenthesis, we calculate the distance between this closed parenthesis and its layer's start index. We calculate a distance to $)ABC)$ by using the last ')' index minus the first ')' index, then it will be the length of $ABC$.
+#### [Leetcode 32 (Hard): Longest Valid Parentheses](https://leetcode.com/problems/longest-valid-parentheses/)
 
-Recall problem 856, when we met a closed parenthesis, we pop both the open parenthesis that is got matched, also its left neighbor. As the first  parenthesis in depth = 0 does not have left neighbor, we add 0 in that problem, similarly in this problem, the first parenthesis in  depth = 0 does not have left neighbor, we can push -1 initially. In this way, we can compute the distance via close parenthesis's index - left neighbor's index. By adding this dummy -1, we would not have to divide it into 2 situations: $i = 0$(do not have left neighbor) and $i\geq 0$(has left neighbor).
+##### Problem Description
+Given a string consisting solely of the characters '(' and ')', determine the length of the longest valid (well-formed) substring of parentheses.
 
-Follow the idea, for each character in the input:
-+ If it is a '(', then we are creating a new layer, so we just push the index of '(' to our stack;
-+ If it is a ')', then we are ending a layer. 
-  + pop the open parenthesis's index that got matched
-  + if the stack is now empty, this means that number of closed parentheses $>$ number of open parentheses. As what's in stack is the dummy -1 and all open parentheses, each time we met a closed parenthesis, we pop the open one out. so if the stack is empty, that means the dummy node is popped, which is the closed parentheses is one more than the number of open parentheses. Thus, we can just put this close parenthesis index to stack as the left neighbor of new layer
-  + if the stack is not empty, this means that the parentheses from left neighbor till now is valid, we can compute the valid length then potentially update the max length of valid parentheses. Use the right parenthesis index - stack.peek(the left neighbor's index) to get the length. Then we just track the maximum value of such valid parentheses length.
+##### Approach and Explanation
+To solve this problem, our goal is to find the maximum length of a valid substring. A key insight is to use a stack to track the potential start indices of valid parentheses. This allows us to easily calculate the length of valid parentheses substrings as we parse through the input string.
 
+Here is the step-by-step logic:
 
-Here is an animation(too small? [original slides](/src/main/resources/32_longest_valid_parentheses.pptx))
+1. **Initialization:**  
+   Begin by pushing `-1` onto the stack. This dummy index helps handle edge cases smoothly. Specifically, it allows us to compute the length of valid substrings starting at index 0 without needing separate handling.
+
+2. **Iterating Through the String:**  
+   For each character in the string:
+   - **If the character is '(':**  
+     Push its index onto the stack. This indicates the start of a potential new valid substring.
+   - **If the character is ')':**  
+     Pop the top index from the stack, which corresponds to the most recent unmatched '('.
+     - **If the stack is empty after the pop:**  
+       This indicates that there are more ')' than '(' up to the current position. In this case, push the current index onto the stack. This current index now acts as a new reference point (or left boundary) for future valid substrings.
+     - **If the stack is not empty:**  
+       Compute the length of the current valid substring by subtracting the new top index of the stack from the current index (i.e., `current_index - stack.peek()`). Update the maximum length if this value is larger than the previously recorded maximum. Do not push the new ')' index to stack as this valid parentheses are still growing.
+
+This method efficiently calculates the valid substring length by dynamically tracking unmatched parentheses using the stack.
+
+##### Visualization
+An animation is available to help visualize the process. *(Note: If the animation appears too small, consider using the [original slides](/src/main/resources/32_longest_valid_parentheses.pptx) for a larger view.)*
+
 <figure style="text-align: center;">
   <img src="../src/main/resources/32_longest_valid_parentheses.gif" alt="Description">
   <figcaption>
