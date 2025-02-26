@@ -28,7 +28,7 @@ the pointer + 1 points to.
 | isEmpty   | O(1)          |
 
 ### Practice
-#### Leetcode 20(Easy). Valid Parentheses
+#### [Leetcode 20(Easy). Valid Parentheses](https://leetcode.com/problems/valid-parentheses/description/)
 ##### Description:
 Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
 
@@ -70,25 +70,25 @@ The score of a balanced parentheses string is based on the following rule:
 + (A) has score 2 * A, where A is a balanced parentheses string.
 
 ##### Solution: 
-Before calculating the score of the input, we initialize the stack via pushing 0(current value of the input)
+Before calculating the score of the input, we initialize the stack by pushing 0(the current value of the input)
 Then for each character in the string, it is either '(' or ')':
 + If the character is '(', then it is a new nested layer, for example, a string with "(())" has layer depth 2,
 while a string "((()()))" has a depth 3, as there are at most 3 unmatched ((( appear together, 
-either (((, or ((()(. Each time for  a new layer, we push 0 to the stack indicates that 
+either (((, or ((()(. Each time for  a new layer, we push 0 to the stack indicating that 
 this is a new layer;
-+ If the character is ')', then it ends a nested layer. As we end the layer, 
-we will need to double the score of the nested string by rule 3. When we finish nesting calculation,
++ If the character is ')', it ends a nested layer. As we end the layer, 
+we will need to double the score of the nested string by rule 3. When we finish the nesting calculation,
 we also need to add this string's score to the left adjacent nested string in the same depth, which is rule 2. 
-For example, (ABC), where A,B,C are all balanced parentheses string, and A,B,C has the same depth. 
-  + Thus when we find the score of A, we will add score A to score (, which is 0, get a score $score_{(A}$;
-  + then when we find the score of B, we will add score B to $score_{(A}$, get $score_{(AB}$, 
-  + then when we find the score of C, we will add score C to $score_{(AB}$, get $score_{(ABC}$
+For example, (ABC), where A, B, and C are all balanced parentheses strings, and A, B, and C have the same depth. 
+  + Thus when we find the score of A, we will add score A to score (, which is 0, and get a score $score_{(A}$;
+  + Then when we find the score of B, we will add score B to $score_{(A}$, get $score_{(AB}$, 
+  + Then when we find the score of C, we will add score C to $score_{(AB}$, get $score_{(ABC}$
   + then we have ), that means we need to double the score of $ABC$, then push it to stack 
 
-In short, by pop 2 values from stack and push 1 value in stack when we encounter ')', 
-we actually finish the match this ')' to the most recent open parentheses, and by adding the result to
-the second recent open parentheses, we make this second parentheses to be the most recent unmatched 
-open parentheses **and** compute the nest string score. 
+In short, by popping 2 values from the stack and pushing 1 value in the stack when we encounter ')', 
+we finish the match this ')' to the most recent open parenthesis, and by adding the result to
+the second recent open parenthesis, we make this second parenthesis to be the most recent unmatched 
+open parenthesis **and** compute the nest string score. 
 
 Here is an animation(too small? [original slides](/src/main/resources/856_score_of_parentheses.pptx))
 <figure style="text-align: center;">
@@ -98,7 +98,7 @@ Here is an animation(too small? [original slides](/src/main/resources/856_score_
   </figcaption>
 </figure>
 
-##### [Code]()
+##### [Code](/src/main/java/data_structures/stack/ScoreOfParentheses.java)
 
 ##### Complexity:
 Time Complexity is $O(n)$ where n is the length of parentheses input;
