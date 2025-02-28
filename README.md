@@ -16,20 +16,16 @@ This repository is **actively under development**, meaning that:
 [DSA](./)/
 - [README.md](./README.md) - Project documentation
 - [LICENSE](./LICENSE) - License information
-- [LeetCode Practice](./leetcode_practice.md) - LeetCode tracking document
-- [Docs](./docs/) - Documentation
-  - [Data Structures](./docs/data_structures.md)
-  - [Algorithms](./docs/algorithms.md)
-  - [LeetCode Guide](./docs/leetcode_guide.md)
-- [Data Structures](./data_structures/) - Core data structure implementations
-  - [Stack](./data_structures/stack/)
+- [LeetCode Practice](./leetcode_practice.md) - LeetCode classic/common problem
+- [Data Structures](./docs/data_structures.md) - Core data structure docs and implementations
+  - [Stack](./docs/data_structures.md#stack)
   - [Queue](./data_structures/queue/)
   - [Linked List](./data_structures/linked_list/)
   - [Tree](./data_structures/tree/)
   - [Graph](./data_structures/graph/)
   - [HashMap](./data_structures/hashmap/)
   - [Heap](./data_structures/heap/)
-- [Algorithms](./algorithms/) - Core algorithm implementations
+- [Algorithms](./algorithms/) - Core algorithm docs and implementations
   - [Sorting](./algorithms/sorting/)
   - [Searching](./algorithms/searching/)
   - [Graph](./algorithms/graph/)
@@ -38,13 +34,12 @@ This repository is **actively under development**, meaning that:
   - [Divide and Conquer](./algorithms/divide_and_conquer/)
   - [Backtracking](./algorithms/backtracking/)
 - [Tests](./test/) - Unit tests for DSA implementations
-  - [Data Structures](./test/data_structures/)
+  - [Data Structures](./src/test/java/data_structures/)
   - [Algorithms](./test/algorithms/)
 
 
 
 ## 📌 Implementing Data Structures
-- **Array**
 - **Linked List** (Singly, Doubly, Circular)
 - **Stack**
 - **Queue** (Standard, Priority Queue)
@@ -69,12 +64,11 @@ This repository is **actively under development**, meaning that:
 2. Navigate into the project directory:
    cd DSA
 
-3. Compile and run Java files:
-   javac data_structures/stack/Stack.java
-   java data_structures.stack.Stack
+3. Build Java files:
+   ./gradlew build 
 
 4. Run JUnit tests:
-   mvn test  
+   ./gradlew test  
 
 ## 🤝 Contributions
 Contributions are welcome! Feel free to submit pull requests with improvements, optimizations, or additional implementations.
