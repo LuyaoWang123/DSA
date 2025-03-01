@@ -158,4 +158,29 @@ Space Complexity is $O(n)$
 So far, we have seen how to use stack to keep track of indices to compute the length. A similar problem is [739. Daily Temperatures](https://leetcode.com/problems/daily-temperatures/), which is we store the index in a stack if the current element arr[i] contributes to a non-increasing sequence, otherwise, arr[i] contributes to an increasing sequence, that means arr[i] is the first warmer day for whatever value $j$ in the stack such that $arr[j] < arr[i]$. Another similar problem is [84. Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/), this is the problem in that we store indices of non-decreasing elements. If $height[i]$ contributes to decreasing sequence, then we need to calculate the rectangle whose width ends at $i-1$ and starts at $j$(such that $height[j]\geq height[i]$). [More stack problems](/leetcode_practice.md#stack).
 
 ## Queue
-[Queue] is a data structure that follows **First In, First Out(FIFO)**. Namely, the element being pushed first will be the one that is first popped out.
+[Queue(Implementation)](/src/main/java/data_structures/queue/Queue.java) is a data structure that follows **First In, First Out(FIFO)**. Namely, the element being pushed first will be the one that is first popped out.
+
+<figure style="text-align: center;">
+  <img src="../src/main/resources/queue.gif" alt="Queue description">
+  <figcaption>
+    <strong>Figure 3.</strong> Queue Mechanism(<a href="../src/main/resources/queue.pptx">Slides</a>)<br>
+  </figcaption>
+</figure>
+
+In this mechanism demonstration, we set 
++ $tail = 0$ (where the element reside when enqueue)
++ $head = 0$ (where the element reside when dequeue)
++ $size = 0$ (number of element in the queue)
+
+for queue initialization.
+
++ If we enqueue one element into queue, (after check overflow), we first assign the value to where $tail$ points, then increment $tail$ by one. We treated the array as circular array, so if $tail$ already hits capacity, we move $tail$ to 0.
++ If we dequeue from queue, (after check underflow), we first store head element to $x$, then increment $head$ by one. Similarly to enqueue, wrap around $head$ when it hits capacity, we move $head$ to 0.
+
+Queue's implementation--first assign value then increment pointer for add operation--follows [Introduction to Algorithm](https://www.google.com/books/edition/Introduction_to_Algorithms_fourth_editio/RSMuEAAAQBAJ?hl=en&gbpv=0). We can also first increment pointer then assign value, this is what [Algorithm](https://www.google.com/books/edition/Algorithms/MTpsAQAAQBAJ?hl=en&sa=X&ved=2ahUKEwipstXqi-iLAxWIjYkEHW8_AccQiqUDegQIDRAH) did.
+
+### Time Complexity
+| Operation | Time Complexity |
+|-----------|-----------------|
+| enqueue      | O(1)          |
+| dequeue       | O(1)          |
