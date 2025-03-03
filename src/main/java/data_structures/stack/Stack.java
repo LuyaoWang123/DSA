@@ -1,5 +1,8 @@
 package src.main.java.data_structures.stack;
 
+/**
+ * A simple implementation based on Introduction to Algorithm, 4-th Edition, Chapter 10.1 
+ */
 public class Stack<U> {
     private int topPtr;
     private int capacity;

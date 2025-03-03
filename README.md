@@ -17,9 +17,9 @@ This repository is **actively under development**, meaning that:
 - [README.md](./README.md) - Project documentation
 - [LICENSE](./LICENSE) - License information
 - [LeetCode Practice](./leetcode_practice.md) - LeetCode classic/common problem
-- [Data Structures](./docs/data_structures.md) - Core data structure docs and implementations
-  - [Stack](./docs/data_structures.md#stack)
-  - [Queue](./data_structures/queue/)
+- [Data Structures](./docs/) - Core data structure docs and implementations
+  - [Stack](./docs/stack.md)
+  - [Queue](./docs/queue.md)
   - [Linked List](./data_structures/linked_list/)
   - [Tree](./data_structures/tree/)
   - [Graph](./data_structures/graph/)
