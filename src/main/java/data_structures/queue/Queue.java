@@ -45,4 +45,12 @@ public class Queue<U> {
         size = size - 1;
         return x;
     }
+
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
+    public int size() {
+        return size;
+    }
 }
