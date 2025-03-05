@@ -74,15 +74,23 @@ Return an ordering of the deck that would reveal the cards in increasing order.
 Note that the first entry in the answer is considered to be the top of the deck.
 
 #### Solution
-For this problem, we want the cards that are revealed follow increasing order. Thus, it is easier to start with: we need to sort the input array to get increasing order. Then the requirement also requires: the cards that are revealed need to be increasing, so we can assign the sorted element to the output array when we reveal cards. But how can we assign the sorted element $deck[i]$ to output array? $output[?] = deck[i]$.
+For this problem, we want the cards revealed to follow increasing order. Thus, it is easier to start with: we need to sort the input array to get increasing order. Then the requirement also requires that the cards that are revealed need to be increasing, so we can assign the sorted element to the output array when we reveal cards. But how can we assign the sorted element $deck[i]$ to the output array? $output[?] = deck[i]$.
 
 
-Recall the problem statement: we need do 2 operations each time: 
+Recall the problem statement: we need to do 2 operations each time: 
 + reveal the cards on top(dequeue), and 
-+ put the next card to the bottom(enqueue)
++ Put the next card to the bottom(enqueue)
 
-Then try to fill the blank $?$ seems to be $output[$ index that when we are reveal cards $]$. Thus we can use a queue storing index $[0, n-1]$ to simulate the 2 operations above:
+Then try to fill the blank $?$ seems to be $output[$ index that when we reveal cards $]$. Thus we can use a queue storing index $[0, n-1]$ to simulate the 2 operations above:
 
 + $output[idxQueue.dequeue()] = deck[i]$
 + $idxQueue.enqueue(idxQueue.dequeue())$
 
+#### [Code](/src/main/java/data_structures/queue/RevealCardsInIncreasing.java)
+
+#### Complexity
+$n$ is the size of the input, then we have:
+
+Time complexity: $O(nlogn)$, as we sorted the input array, which is the bottleneck of this algorithm. After sorting, we just iterate the sorted array and assign it to our output by following the simulation, which leads to $O(n)$ time complexity. Thus $O(nlogn + n)=O(nlogn)$
+
+Space complexity: $O(n)$, as we are using the queue with size $n$
