@@ -57,3 +57,32 @@ $size$ is the window size, and $n$ is the input size for next, then we will have
 Time Complexity: $O(n)$, this is linear as we need to iterate all input for next processing
 
 Space Complexity: $O(size)$, we are using queue to keep the most recent $size$ elements. As we only need to store the most recent $size$ elements, thus the queue with size $size$ will be enough, leading to space complexity $O(size)$
+
+### [Leetcode 950(Medium). Reveal Cards In Increasing Order](https://leetcode.com/problems/reveal-cards-in-increasing-order/)
+#### Description
+You are given an integer array deck. There is a deck of cards where every card has a unique integer. The integer on the ith card is $deck[i]$.
+
+You can order the deck in any order you want. Initially, all the cards start face down (unrevealed) in one deck.
+
+You will do the following steps repeatedly until all cards are revealed:
+
+Take the top card of the deck, reveal it, and take it out of the deck.
+If there are still cards in the deck then put the next top card of the deck at the bottom of the deck.
+If there are still unrevealed cards, go back to step 1. Otherwise, stop.
+Return an ordering of the deck that would reveal the cards in increasing order.
+
+Note that the first entry in the answer is considered to be the top of the deck.
+
+#### Solution
+For this problem, we want the cards that are revealed follow increasing order. Thus, it is easier to start with: we need to sort the input array to get increasing order. Then the requirement also requires: the cards that are revealed need to be increasing, so we can assign the sorted element to the output array when we reveal cards. But how can we assign the sorted element $deck[i]$ to output array? $output[?] = deck[i]$.
+
+
+Recall the problem statement: we need do 2 operations each time: 
++ reveal the cards on top(dequeue), and 
++ put the next card to the bottom(enqueue)
+
+Then try to fill the blank $?$ seems to be $output[$ index that when we are reveal cards $]$. Thus we can use a queue storing index $[0, n-1]$ to simulate the 2 operations above:
+
++ $output[idxQueue.dequeue()] = deck[i]$
++ $idxQueue.enqueue(idxQueue.dequeue())$
+
