@@ -1,11 +1,9 @@
-package src.test.java.data_structures.queue;
+package data_structures.queue;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import src.main.java.data_structures.queue.RevealCardsInIncreasing;
 
 public class RevealCardsInIncreasingTest {
     private RevealCardsInIncreasing reveal;

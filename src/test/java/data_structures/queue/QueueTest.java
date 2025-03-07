@@ -1,12 +1,10 @@
-package src.test.java.data_structures.queue;
+package data_structures.queue;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import src.main.java.data_structures.queue.Queue;
 
 public class QueueTest {
     private Queue<Integer> queue;

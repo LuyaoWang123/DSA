@@ -1,8 +1,7 @@
-package src.test.java.data_structures.stack;
+package data_structures.stack;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import src.main.java.data_structures.stack.ScoreOfParentheses;
 
 import static org.junit.jupiter.api.Assertions.*;
 
