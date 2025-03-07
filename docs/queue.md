@@ -94,3 +94,43 @@ $n$ is the size of the input, then we have:
 Time complexity: $O(nlogn)$, as we sorted the input array, which is the bottleneck of this algorithm. After sorting, we just iterate the sorted array and assign it to our output by following the simulation, which leads to $O(n)$ time complexity. Thus $O(nlogn + n)=O(nlogn)$
 
 Space complexity: $O(n)$, as we are using the queue with size $n$
+
+### [Leetcode 239(Hard). Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/)
+#### Description
+You are given an array of integers nums, there is a sliding window of size k which is moving from the very left of the array to the very right. You can only see the k numbers in the window. Each time the sliding window moves right by one position.
+
+Return the max sliding window.
+
+#### Solution
+For this problem, we want to maintain a **fixed** window sliding from [0, n - k],
+and for each window, we want to know the max value among this window.
+Thus we would want to have an output with size n - k + 1.
+
+As we want the max for each window, how could we do that? 
++ **Intuitive approach**: for each window $wdIdx$, where $0\leq wdIdx\leq n - k$, we iterate all 
+element in this window to find the max element, namely, 
+```
+for wdIdx ← 0 to n - k
+  res[wdIdx] ← -inf 
+  for start ← wdIdx to wdIdx + k - 1 
+    res[wdIdx] = max(res[wdIdx], res[start])
+```
+
+However, this approach might lead to $O(n^2)$ time complexity.
+Is there any way that we can memoize the max value candidate of window $wdIdx$, so that 
+when we want to get the max value  of window $j$ where $wdIdx < j <= n - k$, we could use
+the candidate already computed in window $wdIdx$?
+
++  Maintain a non-increasing queue with size $k$, in this way, when we slide the window by 1 each time, 
+    + Maintain our non-increasing queue. 
+    + Then 
+we can check if the max value has been removed as the window moves forward. If so, the queue should dequeue this element, otherwise,
+the queue's first element 
+will be the max value. 
+
+Following this idea, we will have the code following
+#### [Code]
+#### Complexity
+$n$ is the size of the input
+Time complexity: $O(n)$, as each element will be evaluated once.
+Space complexity: $O(k)$,  where $k$ is the size of the fixed window. 
