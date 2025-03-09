@@ -17,14 +17,14 @@ Queue[(Implementation)](/src/main/java/data_structures/queue/Queue.java) is a da
 </figure>
 
 In this mechanism demonstration, we set 
-+ $tail = 0$ (where the element reside when enqueue)
-+ $head = 0$ (where the element reside when dequeue)
-+ $size = 0$ (number of element in the queue)
++ $tail = 0$ (where the element resides when enqueue)
++ $head = 0$ (where the element resides when dequeue)
++ $size = 0$ (number of elements in the queue)
 
-for queue initialization.
+For queue initialization.
 
-+ If we enqueue one element into queue, (after check overflow), we first assign the value to where $tail$ points, then increment $tail$ by one. We treated the array as circular array, so if $tail$ already hits capacity, we move $tail$ to 0.
-+ If we dequeue from queue, (after check underflow), we first store head element to $x$, then increment $head$ by one. Similarly to enqueue, wrap around $head$ when it hits capacity, we move $head$ to 0.
++ If we enqueue one element into the queue, (after check overflow), we first assign the value to where $tail$ points, then increment $tail$ by one. We treated the array as a circular array, so if $tail$ already hits capacity, we move $tail$ to 0.
++ If we dequeue from the queue, (after checking underflow), we first store the head element to $x$, then increment $head$ by one. Similarly to enqueue, wrap around $head$ when it hits capacity, we move $head$ to 0.
 
 Queue's implementation--first assign value then increment pointer for add operation--follows [Introduction to Algorithm](https://www.google.com/books/edition/Introduction_to_Algorithms_fourth_editio/RSMuEAAAQBAJ?hl=en&gbpv=0). 
 
@@ -32,7 +32,7 @@ Queue's implementation--first assign value then increment pointer for add operat
 If we allow that ```enqueue()``` on both $head$ and $tail$, ```dequeue()``` on both $head$ and $tail$, we will get **deque(double-ended-queue)**. Curious about the [implementation]()?
 
 ## Complexity
-```enqueue()``` and ```dequeue()``` is the same time complexity for both head and tail.
+```enqueue()``` and ```dequeue()``` are the same time complexity for both head and tail.
 | Operation | Time Complexity |
 |-----------|-----------------|
 | enqueue      | O(1)          |
@@ -52,7 +52,7 @@ Implement the MovingAverage class:
 + double next(int val) Returns the moving average of the last size values of the stream.
 
 #### Solution
-For this problem, as we have a window of fixed length, and we want to keep track of the sum for this window, namely, $\sum_{i=0}^{n} queue[i]$, where $n< size$. The problem is we just want to keep the most recent $size$ elements, so if the element we add to the queue is the $size-th$ element, we will then want to remove the $0-th$ element, so that the queue will only keep the most recent $size$ elements.
+For this problem, we have a window of fixed length, and we want to keep track of the sum for this window, namely, $\sum_{i=0}^{n} queue[i]$, where $n< size$. The problem is we just want to keep the most recent $size$ elements, so if the element we add to the queue is the $size-th$ element, we will then want to remove the $0-th$ element, so that the queue will only keep the most recent $size$ elements.
 
 Following the idea, we have the code as below:
 
@@ -61,15 +61,15 @@ Following the idea, we have the code as below:
 #### Complexity
 $size$ is the window size, and $n$ is the input size for next, then we will have:
 
-Time Complexity: $O(n)$, this is linear as we need to iterate all input for next processing
+Time Complexity: $O(n)$, this is linear as we need to iterate all input for the next processing.
 
-Space Complexity: $O(size)$, we are using queue to keep the most recent $size$ elements. As we only need to store the most recent $size$ elements, thus the queue with size $size$ will be enough, leading to space complexity $O(size)$
+Space Complexity: $O(size)$, we are using a queue to keep the most recent $size$ elements. As we only need to store the most recent $size$ elements, thus the queue with size $size$ will be enough, leading to space complexity $O(size)$
 
 ### [Leetcode 950(Medium). Reveal Cards In Increasing Order](https://leetcode.com/problems/reveal-cards-in-increasing-order/)
 #### Description
 You are given an integer array deck. There is a deck of cards where every card has a unique integer. The integer on the ith card is $deck[i]$.
 
-You can order the deck in any order you want. Initially, all the cards start face down (unrevealed) in one deck.
+You can order the deck in any order you want. Initially, all the cards start face-down (unrevealed) in one deck.
 
 You will do the following steps repeatedly until all cards are revealed:
 
@@ -118,17 +118,17 @@ As we want the max for each window, how could we do that?
 element in this window to find the max element, namely, 
 ```
 for wdIdx ← 0 to n - k
-  res[wdIdx] ← -inf 
-  for start ← wdIdx to wdIdx + k - 1 
-    res[wdIdx] = max(res[wdIdx], res[start])
+ res[wdIdx] ← -inf 
+ for start ← wdIdx to wdIdx + k - 1 
+ res[wdIdx] = max(res[wdIdx], res[start])
 ```
 
 However, this approach might lead to $O(n^2)$ time complexity.
 Is there any way that we can memoize the max value candidate of window $wdIdx$, so that 
-when we want to get the max value  of window $j$ where $wdIdx < j <= n - k$, we could use
+when we want to get the max value of window $j$ where $wdIdx < j <= n - k$, we could use
 the candidate already computed in window $wdIdx$?
 
-+  Maintain a non-increasing queue with size $k$, in this way, when we slide the window by 1 each time, 
++ Maintain a non-increasing queue with size $k$, in this way, when we slide the window by 1 each time, 
     + Maintain our non-increasing queue. 
     + Then 
 we can check if the max value has been removed as the window moves forward. If so, the queue should dequeue this element, otherwise,
