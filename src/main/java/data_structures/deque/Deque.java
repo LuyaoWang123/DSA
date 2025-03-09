@@ -70,4 +70,14 @@ public class Deque<U> {
         size = size - 1;
         return x;
     }
+    
+    public U peekHead() {
+        if (isEmpty()) throw new Error("Deque underflow when get head");
+        return deque[head];
+    }
+
+    public U peekTail() {
+        if (isEmpty()) throw new Error("Deque underflow when get tail");
+        return deque[tail - 1];
+    }
 }

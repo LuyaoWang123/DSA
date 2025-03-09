@@ -124,4 +124,30 @@ public class DequeTest {
         deque.dequeueFromHead();
         assertTrue(deque.isEmpty());
     }
+
+    @Test
+    public void testPeekHead() {
+        deque.enqueueFromTail(1);
+        deque.enqueueFromTail(2);
+        assertEquals(Integer.valueOf(1), deque.peekHead());
+
+        deque.enqueueFromHead(0);
+        assertEquals(Integer.valueOf(0), deque.peekHead());
+
+        deque.dequeueFromHead();
+        assertEquals(Integer.valueOf(1), deque.peekHead());
+    }
+
+    @Test
+    public void testPeekTail() {
+        deque.enqueueFromTail(1);
+        deque.enqueueFromTail(2);
+        assertEquals(Integer.valueOf(2), deque.peekTail());
+
+        deque.enqueueFromHead(0);
+        assertEquals(Integer.valueOf(2), deque.peekTail());
+
+        deque.dequeueFromTail();
+        assertEquals(Integer.valueOf(1), deque.peekTail());
+    }
 }
