@@ -5,6 +5,8 @@
 - [Algorithm Complexity](#complexity)
 - [Practice](#practice)
   - [Leetcode 346. Moving Average from Data Stream](#leetcode-346easy-moving-average-from-data-stream)
+  - [Leetcode 950. Reveal Cards In Increasing Order](#leetcode-950medium-reveal-cards-in-increasing-order)
+  - [Leetcode 239. Sliding Window Maximum](#leetcode-239hard-sliding-window-maximum)
   
 ## Description
 Queue[(Implementation)](/src/main/java/data_structures/queue/Queue.java) is a data structure that follows **First In, First Out(FIFO)**. Namely, the element being pushed first will be the one that is first popped out.
@@ -29,7 +31,7 @@ For queue initialization.
 Queue's implementation--first assign value then increment pointer for add operation--follows [Introduction to Algorithm](https://www.google.com/books/edition/Introduction_to_Algorithms_fourth_editio/RSMuEAAAQBAJ?hl=en&gbpv=0). 
 
 ## Extension-Deque
-If we allow that ```enqueue()``` on both $head$ and $tail$, ```dequeue()``` on both $head$ and $tail$, we will get **deque(double-ended-queue)**. Curious about the [implementation]()?
+If we allow that ```enqueue()``` on both $head$ and $tail$, ```dequeue()``` on both $head$ and $tail$, we will get **deque(double-ended-queue)**. Curious about the [implementation](/src/main/java/data_structures/deque/Deque.java)?
 
 ## Complexity
 ```enqueue()``` and ```dequeue()``` are the same time complexity for both head and tail.
