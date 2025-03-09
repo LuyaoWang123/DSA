@@ -12,7 +12,7 @@ Queue[(Implementation)](/src/main/java/data_structures/queue/Queue.java) is a da
 <figure style="text-align: center;">
   <img src="./images/queue.gif" alt="Queue description">
   <figcaption>
-    <strong>Figure 3.</strong> Queue Mechanism(<a href="./slides/queue.pptx">Slides</a>)<br>
+    <strong>Figure 1.</strong> Queue Mechanism(<a href="./slides/queue.pptx">Slides</a>)<br>
   </figcaption>
 </figure>
 
@@ -37,6 +37,8 @@ If we allow that ```enqueue()``` on both $head$ and $tail$, ```dequeue()``` on b
 |-----------|-----------------|
 | enqueue      | O(1)          |
 | dequeue       | O(1)          |
+| peekHead      | O(1)          |
+| peekTail      | O(1)          |
 
 ## Practice
 ### [Leetcode 346(Easy). Moving Average from Data Stream](https://leetcode.com/problems/moving-average-from-data-stream/)
@@ -133,8 +135,16 @@ we can check if the max value has been removed as the window moves forward. If s
 the queue's first element 
 will be the max value. 
 
+To better demonstrate the idea, we have
+<figure style="text-align: center;">
+  <img src="./images/239_sliding_window_maximum.gif" alt="Queue description">
+  <figcaption>
+    <strong>Figure 2.</strong> Sliding Window Maximum(<a href="./slides/239_sliding_window_maximum.pdf">Slides</a>)<br>
+  </figcaption>
+</figure>
+
 Following this idea, we will have the code following
-#### [Code]
+#### [Code](/src/main/java/data_structures/deque/SlidingWindowMaximum.java)
 #### Complexity
 $n$ is the size of the input
 Time complexity: $O(n)$, as each element will be evaluated once.
