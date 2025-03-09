@@ -1,6 +1,7 @@
 # Queue
 ## Table of Contents
 - [Description](#description)
+- [Extention-Deque](#extension-deque)
 - [Algorithm Complexity](#complexity)
 - [Practice](#practice)
   - [Leetcode 346. Moving Average from Data Stream](#leetcode-346easy-moving-average-from-data-stream)
@@ -27,7 +28,11 @@ for queue initialization.
 
 Queue's implementation--first assign value then increment pointer for add operation--follows [Introduction to Algorithm](https://www.google.com/books/edition/Introduction_to_Algorithms_fourth_editio/RSMuEAAAQBAJ?hl=en&gbpv=0). 
 
+## Extension-Deque
+If we allow that ```enqueue()``` on both $head$ and $tail$, ```dequeue()``` on both $head$ and $tail$, we will get **deque(double-ended-queue)**. Curious about the [implementation]()?
+
 ## Complexity
+```enqueue()``` and ```dequeue()``` is the same time complexity for both head and tail.
 | Operation | Time Complexity |
 |-----------|-----------------|
 | enqueue      | O(1)          |

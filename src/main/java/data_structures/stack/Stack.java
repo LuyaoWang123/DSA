@@ -1,4 +1,4 @@
-package src.main.java.data_structures.stack;
+package data_structures.stack;
 
 /**
  * A simple implementation based on Introduction to Algorithm, 4-th Edition, Chapter 10.1 

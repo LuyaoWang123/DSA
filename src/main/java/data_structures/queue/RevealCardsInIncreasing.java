@@ -1,4 +1,4 @@
-package src.main.java.data_structures.queue;
+package data_structures.queue;
 
 import java.util.Arrays;
 

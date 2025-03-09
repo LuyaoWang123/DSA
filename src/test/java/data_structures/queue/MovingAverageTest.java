@@ -1,11 +1,9 @@
-package src.test.java.data_structures.queue;
+package data_structures.queue;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import src.main.java.data_structures.queue.MovingAverage;
 
 public class MovingAverageTest {
     private MovingAverage movingAverage;
