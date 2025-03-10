@@ -86,6 +86,7 @@
 | 239. Sliding Window Maximum | 1. sliding window + heap(easy-O(nlgn)); 2. sliding window + Monotonic - matain decreasing seq in the window(O(n)) | max element in each fixed length of sub array |
 | 395. Longest Substring with At Least K Repeating Characters | using the uniqueness as constrains. uniqueness iterate from 1 to maxUniqueness |  |
 | 1151. Minimum Swaps to Group All 1's Together | sliding window constrains: the number of all 1s. as long as the length of window exceed total ones |  |
+| 3306. Count of Substrings Containing Every Vowel and K Consonants II | sliding window + shrink. to shrink smoothly, use nextConsonants[] to track the index of next consonant. <br>thus when we shrink the window from the left, we will add nextConsonants[r] - r(which are the legal substrings starts at l |  |
 
 ## Monotoic queue
 | Problem | Thoughts | Understand |
