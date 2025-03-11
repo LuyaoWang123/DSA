@@ -5,13 +5,13 @@
 - [Practice](#practice)
 
 ## Description
-*LinkedList*(*search list*) is a data structure that stores elements in linear order. LinkedList is similar to as array, but it accesses element by points: 
+*LinkedList*(*search list*)([implementation](/src/main/java/data_structures/linkedlist/DoublyLinkedList.java)) is a data structure that stores elements in linear order. LinkedList is similar to as array, but it accesses element by points: 
 
 + *Singly linked list*: each element has only ```next``` pointer 
 <figure style="text-align: center;">
   <img src="./images/singly.jpg" alt="singly linked list description">
   <figcaption>
-    <strong>Figure 1.</strong> singly linked list(<a href="./slides/">Slides</a>)<br>
+    <strong>Figure 1.</strong> singly linked list<br>
   </figcaption>
 </figure>
 
@@ -19,7 +19,7 @@
 <figure style="text-align: center;">
   <img src="./images/doubly.jpg" alt="doubly linked list description">
   <figcaption>
-    <strong>Figure 2.</strong> doubly linked list(<a href="./slides/">Slides</a>)<br>
+    <strong>Figure 2.</strong> doubly linked list<br>
   </figcaption>
 </figure>
 
@@ -34,14 +34,14 @@ Then observe the linked list, if $tail.next$ points to $head$, while $head.pre$ 
 <figure style="text-align: center;">
   <img src="./images/circular_linked_list.jpg" alt="circular linked list description">
   <figcaption>
-    <strong>Figure 3.</strong> circular linked list(<a href="./slides/">Slides</a>)<br>
+    <strong>Figure 3.</strong> circular linked list<br>
   </figcaption>
 </figure>
 
 ## Complexity
 + `prepend()`: insert a node to head
 + `insert(x,y)`: insert node $x$ immediately after $y$
-+ `search(k)`: search $k-th$ element in linked list
++ `search(k)`: search node whose data is $k$ in linked list
 + `remove(x)`: remove node $x$ in linked list
 
 | Operation | Time Complexity |
