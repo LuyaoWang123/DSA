@@ -53,6 +53,7 @@ Then observe the linked list, if $tail.next$ points to $head$, while $head.pre$ 
 | delete       | $O(1)$          |
 
 ## Practice
+
 ### [Leetcode 206(Easy). Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)
 
 #### Description
@@ -67,7 +68,7 @@ For this problem, we want to change the pointer direction of the node, specifica
 
 
 
-#### [Code]()
+#### [Code](/src/main/java/data_structures/linkedlist/ReverseLinkedList.java)
 
 #### Complexity
 As the reverse operation only takes constant time: $O(1)$, and there are $n$ nodes in our input, thus this algorithm will take $O(n)$ time complexity.
