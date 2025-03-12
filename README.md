@@ -20,7 +20,7 @@ This repository is **actively under development**, meaning that:
 - [Data Structures](./docs/) - Core data structure docs and implementations
   - [Stack](./docs/stack.md)
   - [Queue](./docs/queue.md)
-  - [Linked List](./data_structures/linked_list/)
+  - [Linked List](./docs/linkedlist.md)
   - Tree
   - Graph
   - HashMap
