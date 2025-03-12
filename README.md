@@ -21,21 +21,21 @@ This repository is **actively under development**, meaning that:
   - [Stack](./docs/stack.md)
   - [Queue](./docs/queue.md)
   - [Linked List](./data_structures/linked_list/)
-  - [Tree](./data_structures/tree/)
-  - [Graph](./data_structures/graph/)
-  - [HashMap](./data_structures/hashmap/)
-  - [Heap](./data_structures/heap/)
-- [Algorithms](./algorithms/) - Core algorithm docs and implementations
-  - [Sorting](./algorithms/sorting/)
-  - [Searching](./algorithms/searching/)
-  - [Graph](./algorithms/graph/)
-  - [Dynamic Programming](./algorithms/dynamic_programming/)
-  - [Greedy](./algorithms/greedy/)
-  - [Divide and Conquer](./algorithms/divide_and_conquer/)
-  - [Backtracking](./algorithms/backtracking/)
+  - Tree
+  - Graph
+  - HashMap
+  - Heap
+- Algorithms - Core algorithm docs and implementations
+  - Sorting
+  - Searching
+  - Graph
+  - Dynamic Programming
+  - Greedy
+  - Divide and Conquer
+  - Backtracking
 - [Tests](./test/) - Unit tests for DSA implementations
   - [Data Structures](./src/test/java/data_structures/)
-  - [Algorithms](./test/algorithms/)
+  - Algorithms
 
 
 
