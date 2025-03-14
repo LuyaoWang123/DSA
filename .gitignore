@@ -3,3 +3,21 @@
 
 # Ignore Gradle build output directory
 build
+
+# Virtual environment directories
+venv/
+.env/
+env/
+
+# Python bytecode and cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Build and distribution artifacts
+build/
+dist/
+*.egg-info/
+*.egg
+
+media
