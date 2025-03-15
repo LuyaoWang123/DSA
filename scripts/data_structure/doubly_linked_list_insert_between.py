@@ -3,7 +3,7 @@ from common.custom_arrow import CustomArrow
 from common.node import Node
 
 
-class LinkedListInsertionScene(Scene):
+class LinkedListInsertBetween(Scene):
     def construct(self):
         title = Text("Doubly Linked List (Insertion between Nodes)", font_size=36)
         title.to_edge(UP)
