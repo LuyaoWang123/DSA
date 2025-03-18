@@ -19,15 +19,15 @@ class LinkedListInsertHead(Scene):
         self.play(FadeIn(initial_nodes))
 
         # Create solid arrows between head and rest
-        arrow_ab = always_redraw(lambda: CustomArrow(
+        arrow_hear_rest = always_redraw(lambda: CustomArrow(
             head.circle.get_right() + UP * 0.2,
             rest.circle.get_left() + UP * 0.2,
             buff=0.2))
-        arrow_ba = always_redraw(lambda: CustomArrow(
+        arrow_rest_head = always_redraw(lambda: CustomArrow(
             rest.circle.get_left() + DOWN * 0.2,
             head.circle.get_right() + DOWN * 0.2,
             buff=0.2))
-        self.play(Create(arrow_ab), Create(arrow_ba))
+        self.play(Create(arrow_hear_rest), Create(arrow_rest_head))
 
         # Introduce new node "x" from off-screen left
         node_new = Node("x", color=GREEN)
@@ -39,15 +39,15 @@ class LinkedListInsertHead(Scene):
         self.play(all_nodes.animate.arrange(RIGHT, buff=3).move_to(ORIGIN))
         self.wait()
 
-        # Display connection text and create arrow_newhead (from node_new to head)
+        # Display connection text and create arrow_x_head (from node_new to head)
         text1 = Tex("$x \\rightarrow{} next = head$")
         text1.move_to(head.get_top() + UP * 1.0)
         self.play(VGroup(all_nodes, text1).animate.move_to(ORIGIN))
-        arrow_newhead = always_redraw(lambda: CustomArrow(
+        arrow_x_head = always_redraw(lambda: CustomArrow(
             node_new.circle.get_right() + UP * 0.2,
             head.circle.get_left() + UP * 0.2,
             buff=0.2))
-        self.play(Create(arrow_newhead))
+        self.play(Create(arrow_x_head))
         self.wait()
 
         # Show conditional text: "if head = null"
@@ -58,11 +58,11 @@ class LinkedListInsertHead(Scene):
         # Preserve copies of the solid nodes and arrows for later reversion.
         solid_head_copy = head.copy()
         solid_rest_copy = rest.copy()
-        arrow_ab_static = always_redraw(lambda: CustomArrow(
+        arrow_head_rest_static = always_redraw(lambda: CustomArrow(
             head.circle.get_right() + UP * 0.2,
             rest.circle.get_left() + UP * 0.2,
             buff=0.2))
-        arrow_ba_static = always_redraw(lambda: CustomArrow(
+        arrow_rest_head_static = always_redraw(lambda: CustomArrow(
             rest.circle.get_left() + DOWN * 0.2,
             head.circle.get_right() + DOWN * 0.2,
             buff=0.2))
@@ -77,26 +77,26 @@ class LinkedListInsertHead(Scene):
             rest.text.copy()
         )
         # For arrows, create static copies and dash them
-        dashed_arrow_ab = DashedVMobject(arrow_ab_static, dashed_ratio=0.2)
-        dashed_arrow_ba = DashedVMobject(arrow_ba_static, dashed_ratio=0.2)
+        dashed_arrow_hr = DashedVMobject(arrow_head_rest_static, dashed_ratio=0.2)
+        dashed_arrow_rh = DashedVMobject(arrow_rest_head_static, dashed_ratio=0.2)
 
         # Transform solid head/rest into their dashed versions
         self.play(
             ReplacementTransform(head, dashed_head),
             ReplacementTransform(rest, dashed_rest),
-            FadeOut(arrow_ab),
-            FadeOut(arrow_ba)
+            FadeOut(arrow_hear_rest),
+            FadeOut(arrow_rest_head)
         )
-        self.play(Create(dashed_arrow_ab), Create(dashed_arrow_ba))
+        self.play(Create(dashed_arrow_hr), Create(dashed_arrow_rh))
         self.wait()
 
         # Fade out the dashed state and conditional text
         self.play(
-            FadeOut(arrow_newhead),
+            FadeOut(arrow_x_head),
             FadeOut(dashed_head),
             FadeOut(dashed_rest),
-            FadeOut(dashed_arrow_ab),
-            FadeOut(dashed_arrow_ba),
+            FadeOut(dashed_arrow_hr),
+            FadeOut(dashed_arrow_rh),
             FadeOut(text2)
         )
 
@@ -155,12 +155,12 @@ class LinkedListInsertHead(Scene):
 
         text5 = Tex("head.pre = x")
         text5.next_to(solid_head_copy, UP, buff=1.0)
-        arrow_newpre = always_redraw(lambda: CustomArrow(
+        arrow_head_x = always_redraw(lambda: CustomArrow(
             solid_head_copy.circle.get_left() + DOWN * 0.2,
             node_new.circle.get_right() + DOWN * 0.2,
             buff=0.2))
         self.play(ReplacementTransform(text4, text5))
-        self.play(Create(arrow_newpre))
+        self.play(Create(arrow_head_x))
         self.wait()
 
         text6 = Tex("head = x")
