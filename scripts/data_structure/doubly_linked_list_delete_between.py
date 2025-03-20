@@ -174,6 +174,7 @@ class LinkedListDeleteBetween(Scene):
         halo1.clear_updaters()
         dot1.clear_updaters()
 
+        # 3rd scene: x->pre = null
         text3 = Tex("$x$", "$\\rightarrow{}$", "$pre$", "$=$", "$null$")
         text3.move_to(text2.get_center())
         self.play(
@@ -183,5 +184,16 @@ class LinkedListDeleteBetween(Scene):
         )
         self.play(
             FadeOut(arrow_delete_pre)
+        )
+        self.wait()
+
+        # 4th scene: x->next = null
+        text4 = Tex("$x$", "$\\rightarrow{}$", "$next$", "$=$", "$null$")
+        text4.move_to(text2.get_center())
+        self.play(
+            ReplacementTransform(text3, text4)
+        )
+        self.play(
+            FadeOut(arrow_delete_post)
         )
         self.wait()
