@@ -173,3 +173,15 @@ class LinkedListDeleteBetween(Scene):
 
         halo1.clear_updaters()
         dot1.clear_updaters()
+
+        text3 = Tex("$x$", "$\\rightarrow{}$", "$pre$", "$=$", "$null$")
+        text3.move_to(text2.get_center())
+        self.play(
+            FadeOut(dot1),
+            FadeOut(halo1),
+            ReplacementTransform(text2, text3)
+        )
+        self.play(
+            FadeOut(arrow_delete_pre)
+        )
+        self.wait()
