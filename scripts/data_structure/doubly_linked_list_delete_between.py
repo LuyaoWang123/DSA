@@ -51,7 +51,15 @@ class LinkedListDeleteBetween(Scene):
             buff=0.2
         )
 
-        text1 = Tex("$x \\rightarrow{} pre \\rightarrow{} next = b$")
+        text1 = Tex("$x$", "$\\rightarrow{}$", "$pre$", "$\\rightarrow{}$", "$next$", "$ = $", "$b$")
+        text1.move_to((pre.get_center() + post.get_center()) / 2 + UP * 2)
+        text1[0].set_color(WHITE)
+        text1[1].set_color(WHITE)
+        text1[2].set_color(WHITE)
+        text1[3].set_color(WHITE)
+        text1[4].set_color(WHITE)
+        text1[5].set_color(WHITE)
+        text1[6].set_color(WHITE)
         text_position = (pre.get_center() + post.get_center()) / 2 + UP * 2
         text1.move_to(text_position)
 
@@ -73,13 +81,41 @@ class LinkedListDeleteBetween(Scene):
         self.play(Write(text1))
         self.wait()
 
+        self.play(
+            text1[0].animate.set_color(YELLOW),
+            node_to_delete.circle.animate.set_color(YELLOW)
+        )
+
         dot = Dot(point=arrow_delete_pre.get_start(), color=YELLOW, radius=0.12)
         halo = create_blurry_halo(dot.get_center(), dot_radius=0.12, halo_outer_radius=0.45, layers=8, color=YELLOW)
-        self.add(dot, halo)
-
         halo.add_updater(lambda mob, dt: mob.move_to(dot.get_center()))
+        self.play(FadeIn(dot), FadeIn(halo))
 
-        self.play(MoveAlongPath(dot, arrow_delete_pre), run_time=2)
-        self.play(MoveAlongPath(dot, arrow_pre_delete), run_time=2)
-        
+        self.play(
+            MoveAlongPath(dot, arrow_delete_pre), 
+            text1[1:3].animate.set_color(YELLOW),
+            run_time=2)
+        self.play(
+            MoveAlongPath(dot, arrow_pre_delete), 
+            text1[3:5].animate.set_color(YELLOW),
+            run_time=2)
+
+        curved_arrow = ArcBetweenPoints(
+            pre.circle.get_right() + UP * 0.2,
+            post.circle.get_left() + UP * 0.2,
+            radius=-8,
+        )
+        curved_arrow.add_tip()
+
+        self.play(
+            dot.animate.move_to(pre.circle.get_right() + UP * 0.2),
+            run_time=1
+        )
+        dot.move_to(curved_arrow.get_start())
+        self.play(
+            ReplacementTransform(arrow_pre_delete, curved_arrow), 
+            MoveAlongPath(dot, curved_arrow),
+            text1[5:7].animate.set_color(YELLOW),
+            run_time=2)
+        self.wait()
         halo.clear_updaters()
