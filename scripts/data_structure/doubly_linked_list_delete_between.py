@@ -101,7 +101,7 @@ class LinkedListDeleteBetween(Scene):
             text1[3:5].animate.set_color(YELLOW),
             run_time=2)
 
-        dot.add_updater(lambda m: m.move_to(arrow_pre_delete.get_end()))
+        dot.add_updater(lambda m: m.move_to(arrow_pre_delete.tip.get_center()))
         curved_arrow = ArcBetweenPoints(
             pre.circle.get_right() + UP * 0.2,
             post.circle.get_left() + UP * 0.2,
@@ -156,7 +156,7 @@ class LinkedListDeleteBetween(Scene):
             text2[3:5].animate.set_color(YELLOW),
             run_time=2)
 
-        dot1.add_updater(lambda m: m.move_to(arrow_post_delete.get_end()))
+        dot1.add_updater(lambda m: m.move_to(arrow_post_delete.tip.get_center()))
         curved_arrow2 = ArcBetweenPoints(
             post.circle.get_left() + DOWN * 0.2,
             pre.circle.get_right() + DOWN * 0.2,
@@ -195,5 +195,9 @@ class LinkedListDeleteBetween(Scene):
         )
         self.play(
             FadeOut(arrow_delete_post)
+        )
+        self.play(
+            FadeOut(text4),
+            FadeOut(node_to_delete)
         )
         self.wait()
