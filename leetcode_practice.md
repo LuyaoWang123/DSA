@@ -177,6 +177,7 @@
 | 127. Word Ladder |  |  |
 | 815. Bus Routes |  |  |
 | 909. Snakes and Ladders | 1.peel onion, while the lader/snake is the same level as board[x][y] = -1;<br>2. strech out the x and y to 1 d array by restore boardToList[cellIdx][r or c] |  |
+| 2115. Find All Possible Recipes from Given Supplies | 1. use bfs to solve this, store the candidate index that can be formed in queue; <br>2. for each bfs iteration, check all indices to see if new ingredients can formed. <br>repeat UNTIL no ingredients can be formed | pruning -> when there is "i" will not be used in future anymore(remove from queue) |
 
 ## DFS
 | Problem | Thoughts | Understand |
