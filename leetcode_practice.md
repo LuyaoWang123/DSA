@@ -163,6 +163,12 @@
 | 3418. Maximum Amount of Money Robot Can Earn | Besides recording x and y, also recording how many operations does it use(the thrid dimentions)<br>recurrence relation:<br>1. dp[i][j][k]=max(dp[i-1][j][k] + coins[i][j], dp[i][j-1][k] + coins[i][j], dp[i-1][j][k+1], dp[i][j-1][k+1]<br>for this status(represented by i,j) if we are using it, then we have 2 value to compare; if we are not using it, still 2 value |  |
 | 494. Target Sum | for the current index, keep track of the remain sum. |  |
 
+## Greedy
+| Problem | Thoughts | Understand |
+|---------|---------|------------|
+| Unweighted agenda problem | selecting a largest subset of nonoverlapping intervals--sort by earliest finish time | unlike meeting room series--all meetings must be scheduled (none can be skipped);<br>uap can skip any meeting force overlap |
+| 3394. Check if Grid can be Cut into Sections | select subsets of nonoverlapping rectangles--sort by smallest dimension axis<br>check the cardinality of subsets >= 2 |  |
+
 ## Bfs
 | Problem | Thoughts | Understand |
 |---------|---------|------------|
