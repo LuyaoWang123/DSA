@@ -14,9 +14,9 @@ while (node != null && node.data != data) {
 }
 return node;'''
         code = self.build_code_block(code_str)
-        self.play(Create(code))
-        self.wait(2)
-
+        self.save_original_colors(code)
+        self.animate_line_focus(code)
+        self.wait()
 
     def build_code_block(self, code_str):
         code = Code(
@@ -36,3 +36,27 @@ return node;'''
 
         self.add(code)
         return code
+    
+    def save_original_colors(self, code):
+        self.original_colors = {}
+        for line in code.code_lines:
+            for submob in line:
+                self.original_colors[submob] = submob.get_fill_color()
+
+    def animate_line_focus(self, code):
+        for line in code.code_lines:
+            self.play(
+                LaggedStart(*[
+                    submob.animate.set_fill(YELLOW)
+                    for submob in line
+                ], lag_ratio=0.1),
+                run_time=2
+            )
+            self.wait(0.5)
+            self.play(
+                LaggedStart(*[
+                    submob.animate.set_fill(self.original_colors.get(submob, WHITE))
+                    for submob in line
+                ], lag_ratio=0.1),
+                run_time=1
+            )
