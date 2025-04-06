@@ -162,6 +162,15 @@
 | 10. Regular Expression Matching | if you wanna if(!A && B || A && !B) which is ^, we can return if (A) return B? |  |
 | 3418. Maximum Amount of Money Robot Can Earn | Besides recording x and y, also recording how many operations does it use(the thrid dimentions)<br>recurrence relation:<br>1. dp[i][j][k]=max(dp[i-1][j][k] + coins[i][j], dp[i][j-1][k] + coins[i][j], dp[i-1][j][k+1], dp[i][j-1][k+1]<br>for this status(represented by i,j) if we are using it, then we have 2 value to compare; if we are not using it, still 2 value |  |
 | 494. Target Sum | for the current index, keep track of the remain sum. |  |
+| 1105. Filling Bookcase Shelves | for each i, it is either with [k, i) for 0<=k<i or be put alone, choose whichever make the result smaller |  |
+| 368. Largest Divisible Subset | dp solution retrival<br>for each i, find the maxsubset in [0, i), then add nums[i] to the maxsubset |  |
+
+## Greedy
+| Problem | Thoughts | Understand |
+|---------|---------|------------|
+| Unweighted agenda problem | selecting a largest subset of nonoverlapping intervals--sort by earliest finish time | unlike meeting room series--all meetings must be scheduled (none can be skipped);<br>uap can skip any meeting force overlap |
+| 3394. Check if Grid can be Cut into Sections | select subsets of nonoverlapping rectangles--sort by smallest dimension axis<br>check the cardinality of subsets >= 2 | 2d--if there is merged interval |
+| 763. Partition Labels | find the sizes of partitions st each partition is not overlapping with each other<br>sol1: merge intervals;<br>sol2: lastOccur[c] == i, if so this is the end of a partition | letter occurance to intervl -> merge intervals |
 
 ## Bfs
 | Problem | Thoughts | Understand |
@@ -177,6 +186,7 @@
 | 127. Word Ladder |  |  |
 | 815. Bus Routes |  |  |
 | 909. Snakes and Ladders | 1.peel onion, while the lader/snake is the same level as board[x][y] = -1;<br>2. strech out the x and y to 1 d array by restore boardToList[cellIdx][r or c] |  |
+| 2115. Find All Possible Recipes from Given Supplies | 1. use bfs to solve this, store the candidate index that can be formed in queue; <br>2. for each bfs iteration, check all indices to see if new ingredients can formed. <br>repeat UNTIL no ingredients can be formed | pruning -> when there is "i" will not be used in future anymore(remove from queue) |
 
 ## DFS
 | Problem | Thoughts | Understand |
