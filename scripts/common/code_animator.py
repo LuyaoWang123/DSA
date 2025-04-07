@@ -31,28 +31,24 @@ class CodeAnimator:
             for submob in line:
                 self.original_colors[submob] = submob.get_fill_color()
 
-    def highlight_line(self, line_index, highlight_color=YELLOW, run_time=2, lag_ratio=0.1):
-            line = self.code.code_lines[line_index]
-            self.scene.play(
-                LaggedStart(
-                    *[submob.animate.set_fill(highlight_color)
-                      for submob in line],
-                    lag_ratio=lag_ratio,
-                ),
-                run_time=run_time
-            )
+    def highlight_line(self, line_index, run_time=1, highlight_color=YELLOW, lag_ratio=0.1):
+        line = self.code.code_lines[line_index]
+        return LaggedStart(
+            *[submob.animate.set_fill(highlight_color)
+                for submob in line],
+            lag_ratio=lag_ratio,
+            run_time=run_time
+        )
 
     def revert_line(self, line_index, run_time=1, lag_ratio=0.1):
-            line = self.code.code_lines[line_index]
-            self.scene.play(
-                LaggedStart(
-                    *[submob.animate.set_fill(self.original_colors[submob])
-                      for submob in line
-                      ],
-                    lag_ratio=lag_ratio
-                ),
-                run_time=run_time
-            )
+        line = self.code.code_lines[line_index]
+        return LaggedStart(
+            *[submob.animate.set_fill(self.original_colors[submob])
+                for submob in line
+              ],
+            lag_ratio=lag_ratio,
+            run_time=run_time
+        )
 
     def get_code_mobject(self):
-            return self.code
+        return self.code
