@@ -97,7 +97,7 @@ The above intuitive approach might lead to $O(n)$ time. Is there any way that we
 The second approach needs only one pass, leading to $O(n)$ time complexity as well, but it will be faster than the first approach as the first approach takes $O(2*n)$ time complexity.
 
 
-#### [Code]()
+#### [Code](/src/main/java/data_structures/linkedlist/MiddleOfLinkedList.java)
 
 #### Complexity
 The first approach takes $O(2*n)=O(n)$ time complexity, as it is a 2-pass algorithm, we are iterating through the linked list twice. Space complexity is $O(1)$;
