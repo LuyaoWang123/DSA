@@ -127,7 +127,7 @@ However, this led to a 2-pass approach. Do we have a 1-pass approach?
   + As there are $k-1$ nodes between slow and fast pointers, after the slow pointer, there will be $k$ nodes in total(only including the fast pointer now)
 + Re-arrange the 2 lists. 
 
-#### [Code]()
+#### [Code](/src/main/java/data_structures/linkedlist/RotateList.java)
 
 #### Complexity
 The first approach takes $O(n)$ time complexity, $O(1)$ space complexity. 
