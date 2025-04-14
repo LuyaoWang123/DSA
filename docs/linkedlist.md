@@ -5,6 +5,7 @@
 - [Practice](#practice)
   - [206. Reverse Linked List](#leetcode-346easy-moving-average-from-data-stream)
   - [876. Middle of the Linked List](#leetcode-876easy-middle-of-the-linked-list)
+  - [61. Rotate List](#leetcode-61medium-rotate-list)
 
 ## Description
 *LinkedList*(*search list*)([implementation](/src/main/java/data_structures/linkedlist/DoublyLinkedList.java)) is a data structure that stores elements in linear order. LinkedList is similar to as array, but it accesses element by points: 
@@ -103,3 +104,32 @@ The second approach needs only one pass, leading to $O(n)$ time complexity as we
 The first approach takes $O(2*n)=O(n)$ time complexity, as it is a 2-pass algorithm, we are iterating through the linked list twice. Space complexity is $O(1)$;
 
 The second approach takes $O(n)$ time complexity, it is only a 1-pass algorithm, with $O(1)$ space complexity.
+
+### [Leetcode 61(Medium). Rotate List](https://leetcode.com/problems/rotate-list/)
+#### Description
+Given the head of a linked list, rotate the list to the right by k places.
+
+#### Solution
+The central idea of this problem is to cut one linked list $L$ into two linked lists $L_1:L_2$, the size of which is $|L|-k$ and $k$. Then, the two lists are rearranged to $L_2:L_1$.
+
+As our $k$ might be larger than n(this leads to a circle when we try to find where to cut), one approach to solve this is to 
+
++ Iterate through with this SinglelyNode, and get the size $|L|$ of the linked list $\to O(n)$ time complexity
++ $k=k\% |L|$
++ Find the place(($|L|-k-1$)-th node) to cut the linked list $\to O(n)$ time complexity
++ Append $L_1$ to $L_2$
+
+However, this led to a 2-pass approach. Do we have a 1-pass approach?
++ Fix a window with size $k$ on linked list:
+  + First set the fast pointer to head, then move it to the k-th node, then set the slow pointer to head(there will be $k-1$ elements between fast and slow pointer, not including fast and slow themselves) 
+  + If $k>n$, then when faster pointer hits the last node, we set it to head(start from head again) 
++ Move the fast and slow pointer together until the fast pointer hits the last element, then slow.next will be the place to cut
+  + As there are $k-1$ nodes between slow and fast pointers, after the slow pointer, there will be $k$ nodes in total(only including the fast pointer now)
++ Re-arrange the 2 lists. 
+
+#### [Code]()
+
+#### Complexity
+The first approach takes $O(n)$ time complexity, $O(1)$ space complexity. 
+
+The second approach takes the same time complexity and space complexity, but it is faster than the first approach as it is one pass.
