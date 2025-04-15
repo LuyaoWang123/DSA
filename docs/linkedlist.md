@@ -133,3 +133,37 @@ However, this led to a 2-pass approach. Do we have a 1-pass approach?
 The first approach takes $O(n)$ time complexity, $O(1)$ space complexity. 
 
 The second approach takes the same time complexity and space complexity, but it is faster than the first approach as it is one pass.
+
+### [LeetCode 25(Hard). Reverse Nodes in k-Group](https://leetcode.com/problems/reverse-nodes-in-k-group/)
+#### Description
+Given the head of a linked list, reverse the nodes of the list k at a time, and return the modified list.
+
+k is a positive integer and is less than or equal to the length of the linked list. If the number of nodes is not a multiple of k then left-out nodes, in the end, should remain as it is.
+
+You may not alter the values in the list's nodes, only nodes themselves may be changed.
+
+#### Solution
+The central idea of this problem is to cut one linked list $L$ into $\lceil \frac{|L|}{k} \rceil$ linked lists $L_1:L_2:L_{\cdots}, :L_{\lceil \frac{|L|}{k} \rceil}$ such that the size of each linked list is $k$ except for the last linked list $L_{\lceil \frac{|L|}{k} \rceil}$ whose size might be smaller than $k$. Then for each $L_i$ we need to reverse it. Then connect them together again. 
+
+As in problem 206, we already know how to reverse a linked list, we can reuse it here, we need to pass $L_i$'s head then we will get a reversed linked list, and then we put this reversed linked list back to the original linked list by setting $L_{i-1}$'s next to $L_i$'s reversed head, and setting $L_i$'s next to $L_{i+1}$'s head. We can demonstrate the process better with Figure 4 below
+<figure style="text-align: center;">
+  <img src="./images/25_reverse_k.jpg" alt="25-reverse-k">
+  <figcaption>
+    <strong>Figure 4.</strong> reverse nodes in k-group<br>
+  </figcaption>
+</figure>
+
++ Set the $ptr$ to sentinel, and $ptr$'s index $i$ to be 0. 
+  + iterate through the singly linked list, if there $i\neq 0$ and $i\% k=0$, then it is the end of $L_i$
+  + We then have $L_i$'s head to be $preTail.next$, $L_i$'s tail to be $ptr$, $L_{i+1}$'s head to be $ptr.next$
+    + Set $ptr.next = null$
+    + Pass $L_i$'s head to method reverse, getting the reversed head, and we know the reversed tail is $L_i$'s original head.
+  + Set $preTail.next$ to be reversed head, $L_i$'s reversed tail's next to be $L_{i+1}$'s head 
+  + update $preTail$ and $ptr$
+
+Following what we talked about, we have the code below.
+
+#### [Code]()
+
+#### Complexity
+The time complexity for this problem is $O(n)$ where $n=|L|$ as each node is at most accessed twice(iteration takes once, the reverse operation takes once). The space complexity for this problem is $O(1)$, we did not create extra space for this problem.
