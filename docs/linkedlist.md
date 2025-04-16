@@ -6,6 +6,7 @@
   - [206. Reverse Linked List](#leetcode-346easy-moving-average-from-data-stream)
   - [876. Middle of the Linked List](#leetcode-876easy-middle-of-the-linked-list)
   - [61. Rotate List](#leetcode-61medium-rotate-list)
+  - [25. Reverse Nodes in k-Group](#leetcode-25hard-reverse-nodes-in-k-group)
 
 ## Description
 *LinkedList*(*search list*)([implementation](/src/main/java/data_structures/linkedlist/DoublyLinkedList.java)) is a data structure that stores elements in linear order. LinkedList is similar to as array, but it accesses element by points: 
@@ -163,7 +164,7 @@ As in problem 206, we already know how to reverse a linked list, we can reuse it
 
 Following what we talked about, we have the code below.
 
-#### [Code]()
+#### [Code](/src/main/java/data_structures/linkedlist/ReverseNodesInKGroup.java)
 
 #### Complexity
 The time complexity for this problem is $O(n)$ where $n=|L|$ as each node is at most accessed twice(iteration takes once, the reverse operation takes once). The space complexity for this problem is $O(1)$, we did not create extra space for this problem.
