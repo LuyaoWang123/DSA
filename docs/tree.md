@@ -30,7 +30,7 @@ To be more general, the rooted tree might not just have 2 children, it might hav
 
 Besides using pointers representing Tree, we can also use an index. For example, in a heap, we will use index $2k+1$ to represent index $k$'s left child, and index $2k+2$ to represent index $k$'s right child. Or in some coding problems, we might be giving an input $parent[i]$ represent $i$'s parent. Overall, the pointer-based representation is still the most common form for tree representation.
 
-As Tree might have multiple representations, we implement the most commonly used smallest unit--[Binary Tree Node Without Parent](), and [Binary Tree Node With Parent]().
+As Tree might have multiple representations, we implement the most commonly used smallest unit--[Binary Tree Node Without Parent](/src/main/java/data_structures/tree/TreeNode.java), and [Binary Tree Node With Parent](/src/main/java/data_structures/tree/TreeNodeWithParent.java).
 
 ## Complexity
 + `insert(x)`: insert a node $x$ to a given binary tree
