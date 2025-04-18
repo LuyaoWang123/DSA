@@ -2,7 +2,9 @@
 ## Table of Contents
 - [Description](#description)
 - [Algorithm Complexity](#complexity)
-- [Practice](#practice)
+- [Trees](#tree)
+  - [Binary Tree](#binary-tree)
+  - [Binary Search Tree](#binary-search-tree)
 
 ## Description
 We talked about Linked List, but not all relationships are linear, thus Tree is introduced. 
@@ -32,7 +34,14 @@ Besides using pointers representing Tree, we can also use an index. For example,
 
 As Tree might have multiple representations, we implement the most commonly used smallest unit--[Binary Tree Node Without Parent](/src/main/java/data_structures/tree/TreeNode.java), and [Binary Tree Node With Parent](/src/main/java/data_structures/tree/TreeNodeWithParent.java).
 
-## Complexity
+
+## Trees
+### Binary Tree
+As discussed in the description, the binary tree has only 2 children, left and right. 
+
+Depending on the need, there might be a *parent* filed. For this binary tree section, consider that binary tree is more common in the coding practice instead of the implementation, so we will skip the implementation, focusing on the coding practice.
+
+#### Complexity
 + `insert(x)`: insert a node $x$ to a given binary tree
 
 + `search(x)`: search a node $x$ in a given binary tree
@@ -44,4 +53,8 @@ As Tree might have multiple representations, we implement the most commonly used
 | insert       | $O(n)$          |
 | search       | $O(n)$          |
 | remove       | $O(n)$          |
-## Practice
+
+#### Practice
+
+
+### Binary Search Tree
