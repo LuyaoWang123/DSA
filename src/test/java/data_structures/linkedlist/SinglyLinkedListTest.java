@@ -18,8 +18,8 @@ public class SinglyLinkedListTest {
         list.prepend(10);
         list.prepend(20);
         assertEquals(2, list.size());
-        assertEquals(20, list.search(20).data);
-        assertEquals(10, list.search(10).data);
+        assertEquals(20, list.search(20).key);
+        assertEquals(10, list.search(10).key);
     }
 
     @Test
@@ -27,8 +27,8 @@ public class SinglyLinkedListTest {
         list.append(10);
         list.append(20);
         assertEquals(2, list.size());
-        assertEquals(10, list.search(10).data);
-        assertEquals(20, list.search(20).data);
+        assertEquals(10, list.search(10).key);
+        assertEquals(20, list.search(20).key);
     }
 
     @Test
@@ -40,7 +40,7 @@ public class SinglyLinkedListTest {
         list.insert(newNode, node10);
         assertEquals(3, list.size());
         assertNotNull(list.search(20));
-        assertEquals(20, list.search(20).data);
+        assertEquals(20, list.search(20).key);
     }
 
     @Test
@@ -48,7 +48,7 @@ public class SinglyLinkedListTest {
         SinglyNode<Integer> newNode = new SinglyNode<>(10);
         list.insert(newNode, null);
         assertEquals(1, list.size());
-        assertEquals(10, list.search(10).data);
+        assertEquals(10, list.search(10).key);
     }
 
     @Test

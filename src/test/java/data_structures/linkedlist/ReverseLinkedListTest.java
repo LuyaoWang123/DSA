@@ -19,7 +19,7 @@ public class ReverseLinkedListTest {
         SinglyNode<Integer> head = new SinglyNode<>(1);
         SinglyNode<Integer> reversed = rll.reverseList(head);
         assertNotNull(reversed);
-        assertEquals(1, reversed.data);
+        assertEquals(1, reversed.key);
         assertNull(reversed.next);
     }
 
@@ -35,13 +35,13 @@ public class ReverseLinkedListTest {
         node3.next = node4;
         SinglyNode<Integer> reversed = rll.reverseList(node1);
         assertNotNull(reversed);
-        assertEquals(4, reversed.data);
+        assertEquals(4, reversed.key);
         assertNotNull(reversed.next);
-        assertEquals(3, reversed.next.data);
+        assertEquals(3, reversed.next.key);
         assertNotNull(reversed.next.next);
-        assertEquals(2, reversed.next.next.data);
+        assertEquals(2, reversed.next.next.key);
         assertNotNull(reversed.next.next.next);
-        assertEquals(1, reversed.next.next.next.data);
+        assertEquals(1, reversed.next.next.next.key);
         assertNull(reversed.next.next.next.next);
     }
 }

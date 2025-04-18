@@ -1,8 +1,11 @@
 package data_structures.linkedlist;
 
 public abstract class Node<U> {
-    U data;
-    public Node (U data) {
-        this.data = data;
+    protected U key;
+    public Node (U key) {
+        this.key = key;
+    }
+    public U getKey() {
+        return key;
     }
 }

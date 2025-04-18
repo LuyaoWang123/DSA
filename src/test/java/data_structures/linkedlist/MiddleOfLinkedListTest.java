@@ -19,7 +19,7 @@ public class MiddleOfLinkedListTest {
         SinglyNode<Integer> head = new SinglyNode<>(1);
         SinglyNode<Integer> middle = mol.middleNode(head);
         assertNotNull(middle);
-        assertEquals(1, middle.data);
+        assertEquals(1, middle.key);
         assertNull(middle.next);
     }
 
@@ -31,7 +31,7 @@ public class MiddleOfLinkedListTest {
         node1.next = node2;
         SinglyNode<Integer> middle = mol.middleNode(node1);
         assertNotNull(middle);
-        assertEquals(2, middle.data); 
+        assertEquals(2, middle.key); 
     }
 
     @Test
@@ -44,7 +44,7 @@ public class MiddleOfLinkedListTest {
         node2.next = node3;
         SinglyNode<Integer> middle = mol.middleNode(node1);
         assertNotNull(middle);
-        assertEquals(2, middle.data); 
+        assertEquals(2, middle.key); 
     }
 
     @Test
@@ -59,6 +59,6 @@ public class MiddleOfLinkedListTest {
         node3.next = node4;
         SinglyNode<Integer> middle = mol.middleNode(node1);
         assertNotNull(middle);
-        assertEquals(3, middle.data); 
+        assertEquals(3, middle.key); 
     }
 }

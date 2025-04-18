@@ -19,7 +19,7 @@ public class RotateListTest {
         SinglyNode<Integer> head = new SinglyNode<>(10);
         SinglyNode<Integer> result = rl.rotateRight(head, 2);
         assertNotNull(result);
-        assertEquals(10, result.data);
+        assertEquals(10, result.key);
         assertNull(result.next);
     }
 
@@ -33,9 +33,9 @@ public class RotateListTest {
         node2.next = node3;
         SinglyNode<Integer> result = rl.rotateRight(node1, 0);
         assertNotNull(result);
-        assertEquals(1, result.data);
-        assertEquals(2, result.next.data);
-        assertEquals(3, result.next.next.data);
+        assertEquals(1, result.key);
+        assertEquals(2, result.next.key);
+        assertEquals(3, result.next.next.key);
         assertNull(result.next.next.next);
     }
 
@@ -49,9 +49,9 @@ public class RotateListTest {
         node2.next = node3;
         SinglyNode<Integer> result = rl.rotateRight(node1, 3);
         assertNotNull(result);
-        assertEquals(1, result.data);
-        assertEquals(2, result.next.data);
-        assertEquals(3, result.next.next.data);
+        assertEquals(1, result.key);
+        assertEquals(2, result.next.key);
+        assertEquals(3, result.next.next.key);
         assertNull(result.next.next.next);
     }
 
@@ -65,9 +65,9 @@ public class RotateListTest {
         node2.next = node3;
         SinglyNode<Integer> result = rl.rotateRight(node1, 5);
         assertNotNull(result);
-        assertEquals(2, result.data);
-        assertEquals(3, result.next.data);
-        assertEquals(1, result.next.next.data);
+        assertEquals(2, result.key);
+        assertEquals(3, result.next.key);
+        assertEquals(1, result.next.next.key);
         assertNull(result.next.next.next);
     }
 
@@ -85,11 +85,11 @@ public class RotateListTest {
         node4.next = node5;
         SinglyNode<Integer> result = rl.rotateRight(node1, 2);
         assertNotNull(result);
-        assertEquals(40, result.data);
-        assertEquals(50, result.next.data);
-        assertEquals(10, result.next.next.data);
-        assertEquals(20, result.next.next.next.data);
-        assertEquals(30, result.next.next.next.next.data);
+        assertEquals(40, result.key);
+        assertEquals(50, result.next.key);
+        assertEquals(10, result.next.next.key);
+        assertEquals(20, result.next.next.next.key);
+        assertEquals(30, result.next.next.next.next.key);
         assertNull(result.next.next.next.next.next);
     }
 }

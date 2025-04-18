@@ -66,7 +66,7 @@ public class DoublyLinkedList<U> implements LinkedList<U, DoublyNode<U>>{
     @Override
     public DoublyNode<U> search(U data) {
         DoublyNode<U> node = head;
-        while (node != null && node.data != data) {
+        while (node != null && node.key != data) {
             node = node.next;
         }
         return node;

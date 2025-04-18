@@ -18,8 +18,8 @@ public class DoublyLinkedListTest {
         list.prepend(10);
         list.prepend(20);
         assertEquals(2, list.size());
-        assertEquals(20, list.search(20).data);
-        assertEquals(10, list.search(10).data);
+        assertEquals(20, list.search(20).key);
+        assertEquals(10, list.search(10).key);
     }
 
     @Test
@@ -27,8 +27,8 @@ public class DoublyLinkedListTest {
         list.append(10);
         list.append(20);
         assertEquals(2, list.size());
-        assertEquals(10, list.search(10).data);
-        assertEquals(20, list.search(20).data);
+        assertEquals(10, list.search(10).key);
+        assertEquals(20, list.search(20).key);
     }
 
     @Test
@@ -38,7 +38,7 @@ public class DoublyLinkedListTest {
         DoublyNode<Integer> newNode = new DoublyNode<>(20);
         list.insert(newNode, list.search(10));
         assertEquals(3, list.size());
-        assertEquals(20, list.search(20).data);
+        assertEquals(20, list.search(20).key);
     }
 
     @Test

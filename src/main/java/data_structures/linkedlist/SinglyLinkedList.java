@@ -42,7 +42,7 @@ public class SinglyLinkedList<U> implements LinkedList<U, SinglyNode<U>>{
     public void insert(SinglyNode<U> newNode, SinglyNode<U> oldNode) {
         if (newNode == null) throw new IllegalArgumentException("new node can not be null");
         if (oldNode == null) {
-            append(newNode.data);
+            append(newNode.key);
         } else {
             newNode.next = oldNode.next;
             oldNode.next = newNode;
@@ -55,7 +55,7 @@ public class SinglyLinkedList<U> implements LinkedList<U, SinglyNode<U>>{
         SinglyNode<U> pre = new SinglyNode<U>(null);
         pre.next = head;
         SinglyNode<U> node = head;
-        while (node != null && node.data != data) {
+        while (node != null && node.key != data) {
             node = node.next;
             pre = pre.next;
         }
@@ -70,9 +70,9 @@ public class SinglyLinkedList<U> implements LinkedList<U, SinglyNode<U>>{
     }
 
     @Override
-    public SinglyNode<U> search(U data) {
+    public SinglyNode<U> search(U key) {
         SinglyNode<U> node = head;
-        while (node != null && node.data != data) {
+        while (node != null && node.key != key) {
             node = node.next;
         }
         return node;
