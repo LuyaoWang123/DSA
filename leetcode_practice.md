@@ -206,6 +206,7 @@
 | 365. Water and Jug Problem | (ax + by ) % gcd (x, y) == 0? where target = ax + by if it is legal |  |
 | 204. Count Primes | for (int i = 2; i <= (int) Math.sqrt(n); i++) {<br>            if (prime[i]) {<br>                for (int c = i * i; c < n; c += i) {<br>                    prime[c] = false;<br>                }<br>            }<br>        } |  |
 | 1183. Maximum Number of Ones | for each square(3*3 example), the number of ones would be <br>[1 + (height - (r + 1)) / sideLength] * [1 + (width - (c + 1)) / sideLength] |  |
+| 781. Rabbits in Forest | Count problem<br>Hashmap store (val of rabbit announced, number of rabbit)<br>1.there will be (number of rabbit / (val of rabbit announced + 1) groups, for each group, the color is the same, and group size is (val of rabbit announced + 1).<br>2.there will also be (number of rabbit % (val of rabbit announced + 1)) rabbits left, then we know that if 0 rabbits left we are done, if more than 0 there will be vl of announced + 1 rabbits left |  |
 
 ## Trie
 | Problem | Thoughts | Understand |
