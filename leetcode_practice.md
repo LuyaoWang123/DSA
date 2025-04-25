@@ -12,6 +12,7 @@
 | 15. 3Sum | One loop + 2sum. (check repetition between i and l, l and r) | know target -> find tuplet |
 | 1726. Tuple with Same Product | 2 loop + hashmap store the result of multiplication, then #pairs choose 2, for each tuple, there are 8 ways to arrange |  |
 | 3371. Identify the Largest Outlier in an Array | target = prefix[i] + suffix[i]; target - nums[i], i. (i and j are not exchangable, so loop 2 direcrions) | know target -> find unsymmtric pair |
+| 2845. Count of Interesting Subarrays | 1. Use prefix to keep track of how many satisfied elements are from [0, r]<br>2. Use hashmap, store (prefix - k, occurance of prefix - k) where key is the number of satisfied elements from [0, l]<br>3. Don't forget modulo!:) | reduce the number of satisfied elements into prefix + 2 sum |
 | 88. Merge Sorted Array | fill from back to start(edge: short length -> out of bounds |  |
 | 27. Remove Element | if ( nums[i] != val ) nums[ptr++] = nums[i]; |  |
 | 26. Remove Duplicates from Sorted Array | if (nums[i] != nums[i-1]) nums[ptr++] = nums[i]; i starts from 1 | followed by 75 |
