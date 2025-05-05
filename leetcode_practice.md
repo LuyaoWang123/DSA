@@ -165,6 +165,7 @@
 | 494. Target Sum | for the current index, keep track of the remain sum. |  |
 | 1105. Filling Bookcase Shelves | for each i, it is either with [k, i) for 0<=k<i or be put alone, choose whichever make the result smaller |  |
 | 368. Largest Divisible Subset | dp solution retrival<br>for each i, find the maxsubset in [0, i), then add nums[i] to the maxsubset |  |
+| 790. Domino and Tromino Tiling | bottom-up<br>recurrence relation is f[i] = f[i - 1] + f[i - 2] + 2*p[i-1], p[i] = p[i-1] + f[i-2]<br>is around for specific width, what's the number of ways to arrange the tiles |  |
 
 ## Greedy
 | Problem | Thoughts | Understand |
